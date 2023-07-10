@@ -1,6 +1,10 @@
 # cross_section
 A cross section calculation handbook for students
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
+The python codes in this repository are licensed under MIT license.
+
 What is this handbook?
 0. Unified notation system
 1. Derivation of cross section, under QFT, tree-level and a bit loop
