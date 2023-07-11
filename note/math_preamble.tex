@@ -1,0 +1,109 @@
+% IMPORTS
+
+% MATH SHORTHANDS
+% Partial Differential of #1 w.r.t. #2
+\newcommand{\dpartial}[2]{\frac{\partial #1}{\partial #2}}
+
+% \ceil{x} instead of \lceil x \rceil
+% Same for \floor{x}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+% Auto-resize () and []
+\newcommand*\autoop{\left(}
+\newcommand*\autocp{\right)}
+\newcommand*\autoob{\left[}
+\newcommand*\autocb{\right]}
+\AtBeginDocument {%
+   \mathcode`( 32768
+   \mathcode`) 32768
+   \mathcode`[ 32768
+   \mathcode`] 32768
+   \begingroup
+       \lccode`\~`(
+       \lowercase{%
+   \endgroup
+       \let~\autoop
+   }\begingroup
+       \lccode`\~`)
+       \lowercase{%
+   \endgroup
+       \let~\autocp
+   }\begingroup
+       \lccode`\~`[
+       \lowercase{%
+   \endgroup
+       \let~\autoob
+   }\begingroup
+       \lccode`\~`]
+       \lowercase{%
+   \endgroup
+       \let~\autocb
+}}
+\delimiterfactor 1001
+\makeatletter
+\AtBeginDocument {%
+          \def\resetMathstrut@{%
+           \setbox\z@\hbox{\the\textfont\symoperators\char40}%
+           \ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@}%
+}%
+\makeatother
+
+\newcommand{\vecbr}[1]{\langle #1 \rangle}
+
+% Unit vectors
+
+\newcommand{\ui}{\hat{\imath}}
+\newcommand{\uj}{\hat{\jmath}}
+\newcommand{\uk}{\hat{k}}
+\newcommand{\V}{\vec{V}}
+
+% Common expressions
+
+\newcommand{\half}[1]{\frac{#1}{2}}
+\newcommand{\recip}[1]{\frac{1}{#1}}
+\newcommand{\invsqrt}[1]{\recip{\sqrt{#1}}}
+\newcommand{\halfpi}{\half{\pi}}
+
+% Integral evaluation bar
+\newcommand{\windbar}[2]{\Big|_{#1}^{#2}}
+\newcommand{\rightinfwindbar}[0]{\Big|_{0}^\infty}
+\newcommand{\leftinfwindbar}[0]{\Big|_{-\infty}^0}
+
+% Column type "L" for tabular environment, contents of column are in display mode by default
+\newcolumntype{L}{>{$}l<{$}}
+
+% Circled single character (used for state machine notation)
+
+\newcommand{\state}[1]{\large\protect\textcircled{\textbf{\small#1}}}
+
+% FORMATTING
+% Remove section numbers
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+% Indent text within section
+% \leftskip=2em
+% Center section headings
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{}{1em}{}
+% `enumerate` environment uses (\alph) format
+\setlist[enumerate]{label=(\alph*)}
+
+\newcommand{\shrule}{\\ \centerline{\rule{13cm}{0.4pt}}}
+
+% QUANTUM 
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+\DeclarePairedDelimiterX\brakaket[3]{\langle}{\rangle}{#1 \delimsize\vert #2 \delimsize\vert #3}
+\newcommand{\tbra}[1]{$\bra{#1}$}
+\newcommand{\tket}[1]{$\ket{#1}$}
+\newcommand{\tbraket}[2]{$\braket{1}{2}$}
+\newcommand{\infint}[0]{\int_{-\infty}^{\infty}}
+\newcommand{\rightinfint}[0]{\int_0^\infty}
+\newcommand{\leftinfint}[0]{\int_{-\infty}^0}
+\newcommand{\wavefuncint}[1]{\infint|#1|^2}
+\newcommand{\ham}[0]{\hat{H}}

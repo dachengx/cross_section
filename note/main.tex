@@ -1,0 +1,243 @@
+\documentclass[titlepage]{book}
+
+% PACKAGES
+
+\usepackage[fontsize=13pt]{fontsize}
+\usepackage{afterpage}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{chngcntr}
+\usepackage{blindtext}
+\usepackage[labelsep=space]{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[bottom=6.5em]{geometry}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage[hyperfootnotes=false,linktoc=page,pdfpagelayout=TwoPageRight]{hyperref}
+\usepackage{lettrine}
+\usepackage{cfr-lm}
+\usepackage{makecell}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage[defaultlines=4,all]{nowidow}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\input{math_preamble}
+
+% PAGE HEADERS
+
+\let\Sectionmark\sectionmark
+\def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
+
+\let\Subsectionmark\subsectionmark
+\def\subsectionmark#1{\def\Subsectionname{#1}\Subsectionmark{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\thepage}
+\fancyhead[RE]{\Sectionname}
+\fancyhead[LO]{\MakeUppercase{\Subsectionname}}
+\fancyhead[RO]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% GRAPHICS
+
+\graphicspath{ {./images/} }
+
+% SECTION FORMAT
+
+\counterwithout{subsection}{section}
+
+\renewcommand{\thesection}{PART \Roman{section}}
+\renewcommand{\thesubsection}{\Roman{subsection}}
+\renewcommand{\thesubsubsection}{\Roman{subsubsection}}
+
+\newcommand{\subsectionbreak}{\newpage}
+
+\titleformat{\section}[display]{\Large\bfseries\filcenter}{\thesection}{.5em}{}
+\titleformat{\subsection}[display]{\large\bfseries\filcenter}{\thesubsection}{0em}{\uppercase}
+
+\counterwithin*{footnote}{page}
+
+% FIGURES
+
+\renewcommand{\thefigure}{\roman{figure}}
+
+\renewcommand{\figurename}{\textsc{Fig.}}
+
+\newcommand{\fig}[3]{
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=\linewidth]{#1}
+        \textbf{\caption{#2}}
+        \label{fig:#3}
+    \end{figure}
+}
+
+% EQUATIONS
+
+\newcommand{\eq}[1]{
+    \begin{equation*}
+    \begin{split}
+        #1
+    \end{split}
+    \end{equation*}
+}
+
+\newcommand{\eqnum}[1]{
+    \begin{equation}
+    \begin{split}
+        #1
+    \end{split}
+    \end{equation}
+}
+
+% OLDSTYLENUMS
+
+\DeclareMathSymbol{0}{\mathalpha}{letters}{`0}
+\DeclareMathSymbol{1}{\mathalpha}{letters}{`1}
+\DeclareMathSymbol{2}{\mathalpha}{letters}{`2}
+\DeclareMathSymbol{3}{\mathalpha}{letters}{`3}
+\DeclareMathSymbol{4}{\mathalpha}{letters}{`4}
+\DeclareMathSymbol{5}{\mathalpha}{letters}{`5}
+\DeclareMathSymbol{6}{\mathalpha}{letters}{`6}
+\DeclareMathSymbol{7}{\mathalpha}{letters}{`7}
+\DeclareMathSymbol{8}{\mathalpha}{letters}{`8}
+\DeclareMathSymbol{9}{\mathalpha}{letters}{`9}
+
+% REFERENCES
+
+\hypersetup{
+    colorlinks=false,
+    linkbordercolor={0 0 0},
+    pdfborderstyle={/S/U/W 0.0}
+}
+
+\newcommand{\secref}[1]{\hyperref[sec:#1]{Section #1}}
+
+\newcommand{\figref}[1]{\hyperref[fig:#1]{Fig. #1}}
+
+% LARGE FIRST LETTER OF SECTION
+
+\newcommand{\firstword}[2]{
+    \lettrine[lines=3,nindent=0em,findent=0.5em,realheight]{#1}{#2}
+}
+
+% TABLE OF CONTENTS FORMAT
+
+\renewcommand{\contentsname}{CONTENTS}
+\renewcommand{\cfttoctitlefont}{\hfil\bfseries\fontsize{15pt}{0pt}\selectfont}
+\renewcommand{\cftaftertoctitleskip}{0.5\baselineskip}
+\renewcommand{\cftsecfont}{\bfseries}
+
+\addtolength{\cftsecnumwidth}{40pt}
+\addtolength{\cftsubsecnumwidth}{10pt}
+\setlength{\cftbeforetoctitleskip}{-3em}
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+% TITLE SETUP
+
+\title{\textbf{\huge{Title}\\\Large{Primary Author}}}
+
+\author{
+    Secondary Author
+    \and
+    Tertiary Author
+}
+
+\date{}
+
+% MISC
+
+\newcommand{\aether}[0]{\ae ther}
+
+\newcommand{\letlist}[1]{
+    \begin{enumerate}[label=(\emph{\alph*})]
+        #1
+    \end{enumerate}
+}
+
+% DOCUMENT
+
+\begin{document}
+
+% TITLE
+
+\maketitle
+
+% PREFACE
+
+\begin{center}
+    \textbf{\Large{PREFACE}}
+\end{center}
+
+\firstword{T}{his} is a preface! \lipsum[1]
+
+\vspace{\baselineskip}
+
+\textit{Some Left Text, (Maybe a Date)} \hfill PREFACE AUTHOR
+
+% TABLE OF CONTENTS
+
+\pagenumbering{gobble}
+\pagestyle{empty}
+\newgeometry{bottom=6em}
+    \renewcommand{\baselinestretch}{0.94}\normalsize
+            \tableofcontents
+    \renewcommand{\baselinestretch}{1.0}\normalsize
+\restoregeometry
+\pagestyle{fancy}
+
+\clearpage
+
+% CONTENTS
+
+\pagenumbering{arabic}
+
+\section{PART TITLE}
+
+\subsection{CHAPTER TITLE} \label{sec:I}
+
+\firstword{M}{ore} big letter text. \lipsum[5] 
+
+Lettered List: 
+
+\letlist{
+    \item \lipsum[1]
+    \item \lipsum[2-2]
+    \item \lipsum[3-3]
+}
+
+\subsection{NEXT CHAPTER TITLE}
+
+\firstword{H}{ere} is an example of a chapter reference: \secref{I}. \lipsum[1]
+
+\lipsum[2-2] \textbf{An example of a centered equation:} \[
+    t' = \frac{t - \frac{v}{c^2}x}{\sqrt{1 - \frac{v^2}{c^2}}}
+\]
+
+\lipsum[3-3] \textbf{An example of an inline equation:} $x = -\frac{\pm \sqrt{b^2 - 4ac}}{2a}$ \lipsum[4-4]. \textbf{Now we have a footnote}\footnote{Hello! Example equations down here also: $\ham \psi = \hat{E}\psi$.}.
+
+An example figure: \fig{fig1}{An Example Figure Caption}{i}
+
+If I want to reference it, \figref{i}.
+
+Unnumbered equations:\eq{
+    x = y \\
+    y = z \\
+    x = z \\
+}
+
+Numbered group of equations:\eqnum{
+    a = b \\
+    b = c \\
+    a = c \\
+}
+
+\end{document}

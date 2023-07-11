@@ -5,19 +5,25 @@ A cross section calculation handbook for students
 
 The python codes in this repository are licensed under MIT license.
 
-What is this handbook?
+## What are the goals of this handbook?
+
 0. Unified notation system
-1. Derivation of cross section, under QFT, tree-level and a bit loop
-2. Electromagnetism and weak interaction
+1. Derivation of cross section, tree-level and a bit loop
+2. Electromagnetism and weak interaction covered
 3. Reference of textbooks for each step
 4. Reference of literatures for final numerical results
 5. Comparison to latest experiment results
 6. Focus on simplified theory
-7. Provide python codes
+7. Python codes provided
 
-Short-term plan
-1. WIMP
-2. Dark photon
-3. Axion
-4. Neutrino-quark & nucleus
-5. Neutrino-lepton
+## The short-term plan: process to cover
+
+1. WIMP - nucleus
+2. dark photon - electron
+3. axion - electron
+4. neutrino - quark & nucleus
+5. neutrino - lepton
+
+## Credit of template usage
+
+The template used in LaTex codes is modified based on [Physics Book Template](https://www.overleaf.com/latex/templates/physics-book-template/ncpnbrqpttwv), published at Overleaf under [Creative Commons CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/), by [Charles Averill](https://github.com/CharlesAverill).
