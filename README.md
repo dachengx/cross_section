@@ -24,6 +24,12 @@ The python codes in this repository are licensed under MIT license.
 4. neutrino - quark & nucleus
 5. neutrino - lepton
 
+## How to generate the handbook
+
+```
+latexmk -C && latexmk --pdflatex main.tex --shell-escape
+```
+
 ## Credit of template usage
 
 The template used in LaTex codes is modified based on [Physics Book Template](https://www.overleaf.com/latex/templates/physics-book-template/ncpnbrqpttwv), published at Overleaf under [Creative Commons CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/), by [Charles Averill](https://github.com/CharlesAverill).
