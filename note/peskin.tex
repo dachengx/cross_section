@@ -3,7 +3,7 @@
 % TODO: add reference to the textbooks
 There are many equations which are not detailedly derived in Peskin's book.
 
-Here I first revisit the equation 2.30 and 2.31.
+Here I first revisit the equation 2.30 and 2.31:
 
 Given
 
@@ -79,4 +79,51 @@ from equation 2.8,
     \left(a_{\bf{p}}a_{\bf{p^\prime}}+a_{-\bf{p}}a_{-\bf{p^\prime}}\right) \\
     =& \int\frac{\ud^3p}{(2\pi)^3}\omega_{\bf{p}}
     \left(a_{\bf{p^\prime}}a_{\bf{p}}+\half{1}\left[a_{\bf{p}},a_{\bf{p^\prime}}\right]\right)
+}
+
+Revisit the equation 2.46:
+
+Given
+
+\eqnum{
+    H^na_{\bf{p}} =& a_{\bf{p}}(H-E_{\bf{p}})^n
+}
+
+So
+
+\eqnum{
+    e^{iHt}a_{\bf{p}} =& a_{\bf{p}}e^{i(H-E_{\bf{p}})t}
+}
+
+Then
+
+\eqnum{
+    e^{iHt}a_{\bf{p}}e^{-iHt} =& a_{\bf{p}}e^{-iE_{\bf{p}}t}
+}
+
+Revisit the equation 2.54:
+
+When $x^0>y^0$,
+
+\eqnum{
+    \infint\ud p^0\recip{p^2-m^2}e^{-ip\cdot(x-y)}
+    =& \int\ud p^0\recip{{p^0}^2-\bf{p}^2-m^2}e^{-ip\cdot(x-y)} \\
+    =& -\half{1}(2\pi i)
+    \{
+        \mathop{\mathrm{Res}}(\recip{{p^0}^2-\bf{p}^2-m^2},-E_{\bf{p}}) \\
+        &+ \mathop{\mathrm{Res}}(\recip{{p^0}^2-\bf{p}^2-m^2},E_{\bf{p}})
+    \}e^{-ip\cdot(x-y)}
+}
+
+following the contour in the book, which goes around the poles \textcolor{red}{clockwise}.
+
+\eqnum{
+    \brakaket{0}{\left[\phi(x),\phi(y)\right]}{0}
+    =& \int\frac{\ud^3p}{(2\pi)^3}\recip{2E_{\bf{p}}}\left(e^{-ip\cdot(x-y)}-e^{ip\cdot(x-y)}\right) \\
+    =& \int\frac{\ud^3p}{(2\pi)^3}
+    \{
+        \recip{2E_{\bf{p}}}e^{-ip\cdot(x-y)}\vert_{p^0=E_{\bf{p}}} \\
+        &+ \recip{-2E_{\bf{p}}}e^{-ip\cdot(x-y)}\vert_{p^0=-E_{\bf{p}}}
+    \} \\
+    \condeq{x^0>y^0\ \ }& \int\frac{\ud^3p}{(2\pi)^3}\int\frac{\ud p^0}{2\pi i}\frac{-1}{p^2-m^2}e^{-ip\cdot(x-y)}
 }

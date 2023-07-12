@@ -1,0 +1,39 @@
+\section{PART TITLE}
+
+\subsection{CHAPTER TITLE} \label{sec:I}
+
+\firstword{M}{ore} big letter text. \lipsum[5] 
+
+Lettered List: 
+
+\letlist{
+    \item \lipsum[1]
+    \item \lipsum[2-2]
+    \item \lipsum[3-3]
+}
+
+\subsection{NEXT CHAPTER TITLE}
+
+\firstword{H}{ere} is an example of a chapter reference: \secref{I}. \lipsum[1]
+
+\lipsum[2-2] \textbf{An example of a centered equation:} \[
+    t' = \frac{t - \frac{v}{c^2}x}{\sqrt{1 - \frac{v^2}{c^2}}}
+\]
+
+\lipsum[3-3] \textbf{An example of an inline equation:} $x = -\frac{\pm \sqrt{b^2 - 4ac}}{2a}$ \lipsum[4-4]. \textbf{Now we have a footnote}\footnote{Hello! Example equations down here also: $\ham \psi = \hat{E}\psi$.}.
+
+An example figure: \fig{fig1}{An Example Figure Caption}{i}
+
+If I want to reference it, \figref{i}.
+
+Unnumbered equations:\eq{
+    x = y \\
+    y = z \\
+    x = z \\
+}
+
+Numbered group of equations:\eqnum{
+    a = b \\
+    b = c \\
+    a = c \\
+}
