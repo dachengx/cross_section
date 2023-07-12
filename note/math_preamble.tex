@@ -16,10 +16,10 @@
 \newcommand*\autoob{\left[}
 \newcommand*\autocb{\right]}
 \AtBeginDocument {%
-   \mathcode`( 32768
-   \mathcode`) 32768
-   \mathcode`[ 32768
-   \mathcode`] 32768
+   % \mathcode`( 32768
+   % \mathcode`) 32768
+   % \mathcode`[ 32768
+   % \mathcode`] 32768
    \begingroup
        \lccode`\~`(
        \lowercase{%
@@ -107,3 +107,8 @@
 \newcommand{\leftinfint}[0]{\int_{-\infty}^0}
 \newcommand{\wavefuncint}[1]{\infint|#1|^2}
 \newcommand{\ham}[0]{\hat{H}}
+
+\newcommand{\ud}{\mathrm{d}}
+\newcommand{\mev}{\mathrm{MeV}}
+\newcommand{\gev}{\mathrm{GeV}}
+\renewcommand{\bf}[1]{\mathbf{#1}}

@@ -1,0 +1,82 @@
+\subsection{Derivation of equations in Peskin's book}
+
+% TODO: add reference to the textbooks
+There are many equations which are not detailedly derived in Peskin's book.
+
+Here I first revisit the equation 2.30 and 2.31.
+
+Given
+
+\eqnum{
+    \omega_{\bf{p}} =& \sqrt{\abs{\bf{p}}+m^2}
+}
+
+\eqnum{
+    \phi(\bf{x}) =& \int\frac{\ud^3p}{(2\pi)^3}\recip{\sqrt{2\omega_{\bf{p}}}}(a_{\bf{p}}+a^\dagger_{-\bf{p}})e^{i\bf{p}\cdot\bf{x}}
+}
+
+\eqnum{
+    \pi(\bf{x}) =& \int\frac{\ud^3p}{(2\pi)^3}(-i)\sqrt{\frac{\omega_{\bf{p}}}{2}}(a_{\bf{p}}-a^\dagger_{-\bf{p}})e^{i\bf{p}\cdot\bf{x}}
+}
+
+\eqnum{
+    \left[a_{\bf{p}},a^\dagger_{\bf{p^\prime}}\right] =& (2\pi)^3\delta^{(3)}(\bf{p}-\bf{p^\prime})
+}
+
+\eqnum{
+    \left[\phi(\bf{x}),\pi(\bf{x^\prime})\right]
+    =& \int\frac{\ud^3p\ud^3p^\prime}{(2\pi)^6}
+    \frac{-i}{2}\sqrt{\frac{\omega_{\bf{p^\prime}}}{\omega_{\bf{p}}}}
+    \left(
+        \left[a^\dagger_{-\bf{p}},a_{\bf{p^\prime}}\right]-\left[a_{\bf{p}},a^\dagger_{-\bf{p^\prime}}\right]
+    \right)e^{i(\bf{p}\bf{x}+\bf{p^\prime}\bf{x^\prime})} \\
+    =& \int\frac{\ud^3p\ud^3p^\prime}{(2\pi)^3}
+    \frac{-i}{2}\sqrt{\frac{\omega_{\bf{p^\prime}}}{\omega_{\bf{p}}}}
+    \left[
+        -\delta^{(3)}(-\bf{p}-\bf{p^\prime})-\delta^{(3)}(\bf{p}+\bf{p^\prime})
+    \right]e^{i(\bf{p}\bf{x}+\bf{p^\prime}\bf{x^\prime})} \\
+    =& i\int\frac{\ud^3p\ud^3p^\prime}{(2\pi)^3}
+    \sqrt{\frac{\omega_{\bf{p^\prime}}}{\omega_{\bf{p}}}}
+    \delta^{(3)}(\bf{p}+\bf{p^\prime})
+    e^{i(\bf{p}\bf{x}+\bf{p^\prime}\bf{x^\prime})} \\
+    =& i\int\frac{\ud^3p}{(2\pi)^3}
+    e^{i\bf{p}(\bf{x}-\bf{x^\prime})} \\
+    =& i\delta^{(3)}(\bf{x}-\bf{x^\prime})
+}
+
+from equation 2.8,
+
+\eqnum{
+    H =& \int\ud^3x\mathcal{H} \\
+    =& \int\ud^3x\left[\half{1}\pi^2+\half{1}(\nabla\phi)^2+\half{1}m^2\phi^2\right] \\
+    =& \int\ud^3xe^{i(\bf{p}+\bf{p^\prime})\cdot\bf{x}}\int\frac{\ud^3p\ud^3p^\prime}{(2\pi)^6}
+    \{
+        -\frac{\sqrt{\omega_{\bf{p}}\omega_{\bf{p^\prime}}}}{4}
+        (a_{\bf{p}}-a^\dagger_{-\bf{p}})(a_{\bf{p^\prime}}-a^\dagger_{-\bf{p^\prime}}) \\
+        &+ \frac{-\bf{p}\cdot\bf{p^\prime}+m^2}{4\sqrt{\omega_{\bf{p}}\omega_{\bf{p^\prime}}}}
+        (a_{\bf{p}}+a^\dagger_{-\bf{p}})(a_{\bf{p^\prime}}+a^\dagger_{-\bf{p^\prime}})
+    \} \\
+    =& \int\frac{\ud^3p\ud^3p^\prime}{(2\pi)^6}
+    \{
+        -\frac{\sqrt{\omega_{\bf{p}}\omega_{\bf{p^\prime}}}}{4}
+        (a_{\bf{p}}-a^\dagger_{-\bf{p}})(a_{\bf{p^\prime}}-a^\dagger_{-\bf{p^\prime}}) \\
+        &+ \frac{-\mathbf{p}\cdot\mathbf{p^\prime}+m^2}{4\sqrt{\omega_{\bf{p}}\omega_{\bf{p^\prime}}}}
+        (a_{\bf{p}}+a^\dagger_{-\bf{p}})(a_{\bf{p^\prime}}+a^\dagger_{-\bf{p^\prime}})
+    \}(2\pi)^3\delta^{(3)}(\bf{p}+\bf{p^\prime}) \\
+    =& \int\frac{\ud^3p}{(2\pi)^3}
+    \left[
+        -\frac{\omega_{\bf{p}}}{4}
+        (a_{\bf{p}}-a^\dagger_{-\bf{p}})(a_{-\bf{p}}-a^\dagger_{\bf{p}})
+        + \frac{\abs{\bf{p}}+m^2}{4\omega_{\bf{p}}}
+        (a_{\bf{p}}+a^\dagger_{-\bf{p}})(a_{-\bf{p}}+a^\dagger_{\bf{p}})
+    \right] \\
+    =& -\int\frac{\ud^3p}{(2\pi)^3}\recip{4\omega_{\bf{p}}}
+    \{
+        (\abs{\bf{p}}^2+m^2)\left[(a_{\bf{p}}-a^\dagger_{-\bf{p}})(a_{-\bf{p}}-a^\dagger_{\bf{p}})
+        - (a_{\bf{p}}+a^\dagger_{-\bf{p}})(a_{-\bf{p}}+a^\dagger_{\bf{p}})\right]
+    \} \\
+    =& \int\frac{\ud^3p}{(2\pi)^3}\half{\omega_{\bf{p}}}
+    \left(a_{\bf{p}}a_{\bf{p^\prime}}+a_{-\bf{p}}a_{-\bf{p^\prime}}\right) \\
+    =& \int\frac{\ud^3p}{(2\pi)^3}\omega_{\bf{p}}
+    \left(a_{\bf{p^\prime}}a_{\bf{p}}+\half{1}\left[a_{\bf{p}},a_{\bf{p^\prime}}\right]\right)
+}
