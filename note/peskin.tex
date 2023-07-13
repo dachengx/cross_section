@@ -127,3 +127,28 @@ following the contour in the book, which goes around the poles \textcolor{red}{c
     \} \\
     \condeq{x^0>y^0\ \ }& \int\frac{\ud^3p}{(2\pi)^3}\int\frac{\ud p^0}{2\pi i}\frac{-1}{p^2-m^2}e^{-ip\cdot(x-y)}
 }
+
+Revisit the equation 2.58:
+
+Given
+
+\eqnum{
+    D_R(x-y) =& \int\frac{\ud^4p}{(2\pi)^4}e^{-ip\cdot(x-y)}\tilde{D}_R(p)
+}
+
+Set $(x-y)$ as $\Delta x$
+
+\eqnum{
+    \tilde{D}_R(p^\prime)
+    =& \int\ud^4\Delta x\int\frac{\ud^3p}{(2\pi)^3}\recip{2E_{\bf{p}}}
+    \left(
+        e^{-ip\cdot\Delta x} - e^{ip\cdot\Delta x}
+    \right)e^{ip^\prime} \\
+    =& \int\ud\Delta x^{(0)}\int\ud^3p
+    \left(
+        \left[\delta^(3)(\bf{p^\prime}-\bf{p})e^{-i{p^\prime}^{(0)}}-\delta^(3)(\bf{p^\prime}+\bf{p})e^{i{p^\prime}^{(0)}}\right]
+    \right) \\
+    =& \int\ud\Delta x^{(0)}\recip{2E_{\bf{p^\prime}}}\left(e^{-iE_{\bf{p^\prime}}\Delta x^{(0)}}-e^{iE_{\bf{p^\prime}}\Delta x^{(0)}}\right) \\
+    =& \recip{2E_{\bf{p^\prime}}}\left(\recip{-iE_{\bf{p^\prime}}}-\recip{iE_{\bf{p^\prime}}}\right) \\
+    =& \frac{i}{E_{\bf{p^\prime}}^2}
+}
