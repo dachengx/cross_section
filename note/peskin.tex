@@ -152,3 +152,51 @@ Set $(x-y)$ as $\Delta x$
     =& \recip{2E_{\bf{p^\prime}}}\left(\recip{-iE_{\bf{p^\prime}}}-\recip{iE_{\bf{p^\prime}}}\right) \\
     =& \frac{i}{E_{\bf{p^\prime}}^2}
 }
+
+Revisit the formula between 3.5 and 3.6, it is from 2.45. 
+
+Revisit 3.17, David Tong's Claim 4.2.
+
+Revisit 3.29, 3.34  % TODO
+
+Revisit 3.50:
+
+\eqnum{
+    u(p)
+    =& \begin{pmatrix}
+        \sqrt{p\cdot\sigma}\xi \\
+        \sqrt{p\cdot\bar{\sigma}}\xi
+    \end{pmatrix} \\
+    =& \begin{pmatrix}
+        \sqrt{
+            \bigl(\begin{smallmatrix}
+                E+p^3 & \\
+                & E-p^3
+            \end{smallmatrix}\bigr)
+        }\xi \\
+        \sqrt{
+            \bigl(\begin{smallmatrix}
+                E-p^3 & \\
+                & E+p^3
+            \end{smallmatrix}\bigr)
+        }\xi
+    \end{pmatrix} \\
+    =& \begin{pmatrix}
+        \bigl(\begin{smallmatrix}
+            \sqrt{E+p^3} & \\
+            & \sqrt{E-p^3}
+        \end{smallmatrix}\bigr)\xi \\
+        \bigl(\begin{smallmatrix}
+            \sqrt{E-p^3} & \\
+            & \sqrt{E+p^3}
+        \end{smallmatrix}\bigr)\xi
+    \end{pmatrix} \\
+    =& \begin{pmatrix}
+        \left[
+            \sqrt{E+p^3}\left(\half{1-\sigma^3}\right) + \sqrt{E-p^3}\left(\half{1+\sigma^3}\right)
+        \right]\xi \\
+        \left[
+            \sqrt{E-p^3}\left(\half{1+\sigma^3}\right) + \sqrt{E+p^3}\left(\half{1-\sigma^3}\right)
+        \right]\xi
+    \end{pmatrix}
+}
