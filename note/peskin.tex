@@ -236,3 +236,54 @@ Revisit 3.65:
     \end{pmatrix}\delta^{rs} \\
     =& 0
 }
+
+Revisit 4.52:
+
+$V_i$ is the value of each piece, $n_i$ is the number of piece in a possible diagram, 
+while the possible diagram can have infinite number of the same piece. The sum of all diagram is:
+
+\eqnum{
+    &\sum_{\substack{\text{all possible} \\ \text{connected} \\ \text{pieces}}}
+    \sum_{\substack{\text{all}\{n_i\}}}\left(
+        \substack{\text{value of} \\ \text{connected piece}}
+    \right)\times\left(
+        \prod_i \recip{n_i!}(V_i)^{n_i}
+    \right) \\
+    =& \left(
+        \sum\text{connected}
+    \right)\times
+    \sum_{\substack{\text{all}\{n_i\}}}\left(
+        \prod_i\recip{n_i!}(V_i)^{n_i}
+    \right)
+}
+
+here "all $\{n_i\}$" is all possible ordered sets of $\{n_i, n_2, n_3, \dots\}$, 
+where $n_i$ can be from $0$ to $\infty$. 
+
+\eqnum{
+    =& \left(
+        \sum\text{connected}
+    \right)\times\left(
+        \sum_{n_1}\recip{n_1!}V_1^{n_1}
+    \right)\left(
+        \sum_{n_2}\recip{n_2!}V_2^{n_2}
+    \right)\left(
+        \sum_{n_3}\recip{n_3!}V_3^{n_3}
+    \right)\dots \\
+    =& \left(
+        \sum\text{connected}
+    \right)\times\prod_i\left(
+        \sum_{n_i}\recip{n_i!}V_i^{n_i}
+    \right)
+}
+
+here the summation includes $n_i$ from $0$ to $\infty$,
+
+\eqnum{
+    =& \left(
+        \sum\text{connected}
+    \right)\times\prod_i\exp(V_i) \\
+    =& \left(
+        \sum\text{connected}
+    \right)\times\exp(\sum_iV_i)
+}
