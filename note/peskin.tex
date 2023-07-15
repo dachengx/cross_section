@@ -287,3 +287,25 @@ here the summation includes $n_i$ from $0$ to $\infty$,
         \sum\text{connected}
     \right)\times\exp(\sum_iV_i)
 }
+
+Revisit 4.74, it is from 4.66, 4.67, and 4.68, 
+where normalization in 4.66 contracts the $\vert\phi(\bf{k})\vert^2$ in 4.74. 
+
+Revisit 4.77:
+
+\eqnum{
+    &\int\ud\bar{k}_\mathcal{A}^z\ud\bar{k}_\mathcal{B}^z
+    \delta(\bar{k}_\mathcal{A}^z + \bar{k}_\mathcal{B}^z - \sum p_f^z)
+    \delta(\bar{E}_\mathcal{A} + \bar{E}_\mathcal{B} - \sum E_f) \\
+    =& \int\ud\bar{k}_\mathcal{A}^z\delta(
+        \sqrt{\bar{k}_\mathcal{A}^2+m_\mathcal{A}^2} + \sqrt{\bar{k}_\mathcal{B}^2+m_\mathcal{B}^2} - \sum E_f
+    )\vert_{\bar{k}_\mathcal{B}^z=\sum p_f^z\bar{k}_\mathcal{A}^z} \\
+    =& 1 / \vert(
+        \sqrt{\bar{k}_\mathcal{A}^2+m_\mathcal{A}^2} + \sqrt{\bar{k}_\mathcal{B}^2+m_\mathcal{B}^2} - \sum E_f
+    )^\prime\vert \\
+    =& 1 / \vert
+        \bar{k}_\mathcal{A}^z(\bar{k}_\mathcal{A}^2+m_\mathcal{A}^2)^{-1/2}
+        + (\bar{k}_\mathcal{B}^z)^\prime\bar{k}_\mathcal{B}^z(\bar{k}_\mathcal{B}^2+m_\mathcal{B}^2)^{-1/2}
+    \vert \\
+    =& 1 / \vert\frac{\bar{k}_\mathcal{A}^z}{\bar{E}_\mathcal{A}} - \frac{\bar{k}_\mathcal{B}^z}{\bar{E}_\mathcal{B}}\vert
+}
