@@ -3,25 +3,20 @@
 % TODO: add reference to the textbooks
 There are many equations which are not detailedly derived in Peskin's book.
 
-Here I first revisit the equation 2.30 and 2.31:
+\subsubsection{2.30}
+
+Revisit the equation 2.30:
 
 Given
 
 \eqnum{
-    \omega_{\bf{p}} =& \sqrt{\abs{\bf{p}}+m^2}
+    \omega_{\bf{p}} =& \sqrt{\abs{\bf{p}}+m^2} \\
+    \phi(\bf{x}) =& \int\frac{\ud^3p}{(2\pi)^3}\recip{\sqrt{2\omega_{\bf{p}}}}(a_{\bf{p}}+a^\dagger_{-\bf{p}})e^{i\bf{p}\cdot\bf{x}} \\
+    \pi(\bf{x}) =& \int\frac{\ud^3p}{(2\pi)^3}(-i)\sqrt{\frac{\omega_{\bf{p}}}{2}}(a_{\bf{p}}-a^\dagger_{-\bf{p}})e^{i\bf{p}\cdot\bf{x}} \\
+    \left[a_{\bf{p}},a^\dagger_{\bf{p^\prime}}\right] =& (2\pi)^3\delta^{(3)}(\bf{p}-\bf{p^\prime}).
 }
 
-\eqnum{
-    \phi(\bf{x}) =& \int\frac{\ud^3p}{(2\pi)^3}\recip{\sqrt{2\omega_{\bf{p}}}}(a_{\bf{p}}+a^\dagger_{-\bf{p}})e^{i\bf{p}\cdot\bf{x}}
-}
-
-\eqnum{
-    \pi(\bf{x}) =& \int\frac{\ud^3p}{(2\pi)^3}(-i)\sqrt{\frac{\omega_{\bf{p}}}{2}}(a_{\bf{p}}-a^\dagger_{-\bf{p}})e^{i\bf{p}\cdot\bf{x}}
-}
-
-\eqnum{
-    \left[a_{\bf{p}},a^\dagger_{\bf{p^\prime}}\right] =& (2\pi)^3\delta^{(3)}(\bf{p}-\bf{p^\prime})
-}
+Thus
 
 \eqnum{
     \left[\phi(\bf{x}),\pi(\bf{x^\prime})\right]
@@ -41,10 +36,12 @@ Given
     e^{i(\bf{p}\bf{x}+\bf{p^\prime}\bf{x^\prime})} \\
     =& i\int\frac{\ud^3p}{(2\pi)^3}
     e^{i\bf{p}(\bf{x}-\bf{x^\prime})} \\
-    =& i\delta^{(3)}(\bf{x}-\bf{x^\prime})
+    =& i\delta^{(3)}(\bf{x}-\bf{x^\prime}).
 }
 
-from equation 2.8,
+\subsubsection{2.31}
+
+Revisit the equation 2.31. From equation 2.8,
 
 \eqnum{
     H =& \int\ud^3x\mathcal{H} \\
@@ -78,28 +75,32 @@ from equation 2.8,
     =& \int\frac{\ud^3p}{(2\pi)^3}\half{\omega_{\bf{p}}}
     \left(a_{\bf{p}}a_{\bf{p^\prime}}+a_{-\bf{p}}a_{-\bf{p^\prime}}\right) \\
     =& \int\frac{\ud^3p}{(2\pi)^3}\omega_{\bf{p}}
-    \left(a_{\bf{p^\prime}}a_{\bf{p}}+\half{1}\left[a_{\bf{p}},a_{\bf{p^\prime}}\right]\right)
+    \left(a_{\bf{p^\prime}}a_{\bf{p}}+\half{1}\left[a_{\bf{p}},a_{\bf{p^\prime}}\right]\right).
 }
+
+\subsubsection{2.46}
 
 Revisit the equation 2.46:
 
 Given
 
 \eqnum{
-    H^na_{\bf{p}} =& a_{\bf{p}}(H-E_{\bf{p}})^n
+    H^na_{\bf{p}} =& a_{\bf{p}}(H-E_{\bf{p}})^n.
 }
 
-So
+Thus
 
 \eqnum{
-    e^{iHt}a_{\bf{p}} =& a_{\bf{p}}e^{i(H-E_{\bf{p}})t}
+    e^{iHt}a_{\bf{p}} =& a_{\bf{p}}e^{i(H-E_{\bf{p}})t}.
 }
 
 Then
 
 \eqnum{
-    e^{iHt}a_{\bf{p}}e^{-iHt} =& a_{\bf{p}}e^{-iE_{\bf{p}}t}
+    e^{iHt}a_{\bf{p}}e^{-iHt} =& a_{\bf{p}}e^{-iE_{\bf{p}}t}.
 }
+
+\subsubsection{2.53}
 
 Revisit the equation 2.54:
 
@@ -112,10 +113,10 @@ When $x^0>y^0$,
     \{
         \mathop{\mathrm{Res}}(\recip{{p^0}^2-\bf{p}^2-m^2},-E_{\bf{p}}) \\
         &+ \mathop{\mathrm{Res}}(\recip{{p^0}^2-\bf{p}^2-m^2},E_{\bf{p}})
-    \}e^{-ip\cdot(x-y)}
+    \}e^{-ip\cdot(x-y)},
 }
 
-following the contour in the book, which goes around the poles \textcolor{red}{clockwise}.
+following the contour in the book, which goes around the poles \textcolor{red}{clockwise}. Thus
 
 \eqnum{
     \brakaket{0}{\left[\phi(x),\phi(y)\right]}{0}
@@ -125,18 +126,20 @@ following the contour in the book, which goes around the poles \textcolor{red}{c
         \recip{2E_{\bf{p}}}e^{-ip\cdot(x-y)}\vert_{p^0=E_{\bf{p}}} \\
         &+ \recip{-2E_{\bf{p}}}e^{-ip\cdot(x-y)}\vert_{p^0=-E_{\bf{p}}}
     \} \\
-    \condeq{x^0>y^0\ \ }& \int\frac{\ud^3p}{(2\pi)^3}\int\frac{\ud p^0}{2\pi i}\frac{-1}{p^2-m^2}e^{-ip\cdot(x-y)}
+    \condeq{x^0>y^0\ \ }& \int\frac{\ud^3p}{(2\pi)^3}\int\frac{\ud p^0}{2\pi i}\frac{-1}{p^2-m^2}e^{-ip\cdot(x-y)}.
 }
+
+\subsubsection{2.58}
 
 Revisit the equation 2.58:
 
 Given
 
 \eqnum{
-    D_R(x-y) =& \int\frac{\ud^4p}{(2\pi)^4}e^{-ip\cdot(x-y)}\tilde{D}_R(p)
+    D_R(x-y) =& \int\frac{\ud^4p}{(2\pi)^4}e^{-ip\cdot(x-y)}\tilde{D}_R(p).
 }
 
-Set $(x-y)$ as $\Delta x$
+Set $(x-y)$ as $\Delta x$, then
 
 \eqnum{
     \tilde{D}_R(p^\prime)
@@ -150,16 +153,28 @@ Set $(x-y)$ as $\Delta x$
     \right) \\
     =& \int\ud\Delta x^{(0)}\recip{2E_{\bf{p^\prime}}}\left(e^{-iE_{\bf{p^\prime}}\Delta x^{(0)}}-e^{iE_{\bf{p^\prime}}\Delta x^{(0)}}\right) \\
     =& \recip{2E_{\bf{p^\prime}}}\left(\recip{-iE_{\bf{p^\prime}}}-\recip{iE_{\bf{p^\prime}}}\right) \\
-    =& \frac{i}{E_{\bf{p^\prime}}^2}
+    =& \frac{i}{E_{\bf{p^\prime}}^2}.
 }
+
+\subsubsection{3.6}
 
 Revisit the formula between 3.5 and 3.6, it is from 2.45. 
 
-Revisit 3.17, David Tong's Claim 4.2.
+\subsubsection{3.17}
 
-Revisit 3.29, 3.34  % TODO
+Revisit the equation 3.17, David Tong's Claim 4.2.
 
-Revisit 3.50:
+\subsubsection{3.29}
+
+Revisit the equation 3.29: $\TODO$
+
+\subsubsection{3.34}
+
+Revisit the equation 3.34: $\TODO$
+
+\subsubsection{3.50}
+
+Revisit the equation 3.50:
 
 \eqnum{
     u(p)
@@ -201,7 +216,9 @@ Revisit 3.50:
     \end{pmatrix}
 }
 
-Revisit 3.65:
+\subsubsection{3.65}
+
+Revisit the equation 3.65:
 
 \eqnum{
     u^{r\dagger}(p)v^s(p)
@@ -224,6 +241,8 @@ Revisit 3.65:
     \neq& 0
 }
 
+But
+
 \eqnum{
     u^{r\dagger}(\bf{p})v^s(-\bf{p})
     =& \begin{pmatrix}
@@ -237,7 +256,9 @@ Revisit 3.65:
     =& 0
 }
 
-Revisit 4.52:
+\subsubsection{4.52}
+
+Revisit the equation 4.52:
 
 $V_i$ is the value of each piece, $n_i$ is the number of piece in a possible diagram, 
 while the possible diagram can have infinite number of the same piece. The sum of all diagram is:
@@ -254,7 +275,7 @@ while the possible diagram can have infinite number of the same piece. The sum o
     \right)\times
     \sum_{\substack{\text{all}\{n_i\}}}\left(
         \prod_i\recip{n_i!}(V_i)^{n_i}
-    \right)
+    \right),
 }
 
 here "all $\{n_i\}$" is all possible ordered sets of $\{n_i, n_2, n_3, \dots\}$, 
@@ -274,7 +295,7 @@ where $n_i$ can be from $0$ to $\infty$.
         \sum\text{connected}
     \right)\times\prod_i\left(
         \sum_{n_i}\recip{n_i!}V_i^{n_i}
-    \right)
+    \right),
 }
 
 here the summation includes $n_i$ from $0$ to $\infty$,
@@ -288,10 +309,14 @@ here the summation includes $n_i$ from $0$ to $\infty$,
     \right)\times\exp(\sum_iV_i)
 }
 
-Revisit 4.74, it is from 4.66, 4.67, and 4.68, 
+\subsubsection{4.74}
+
+Revisit the equation 4.74, it is from 4.66, 4.67, and 4.68, 
 where normalization in 4.66 contracts the $\vert\phi(\bf{k})\vert^2$ in 4.74. 
 
-Revisit 4.77:
+\subsubsection{4.77}
+
+Revisit the equation 4.77:
 
 \eqnum{
     &\int\ud\bar{k}_\mathcal{A}^z\ud\bar{k}_\mathcal{B}^z
@@ -309,3 +334,166 @@ Revisit 4.77:
     \vert \\
     =& 1 / \vert\frac{\bar{k}_\mathcal{A}^z}{\bar{E}_\mathcal{A}} - \frac{\bar{k}_\mathcal{B}^z}{\bar{E}_\mathcal{B}}\vert
 }
+
+\subsubsection{4.102}
+
+Revisit the equation 4.102, when calculating $\brakaket{\bf{p}_1\bf{p}_2}{iT}{\bf{p}_\mathcal{A}\bf{p}_\mathcal{B}}$ based on \textit{position-space Feynman rules}, 
+like 4.44, one of the diagram contributing to 
+
+\eqnum{
+    \brakaket{\Omega}{T\{\phi(x_\mathcal{A})\phi(x_\mathcal{B})\phi(x_1)\phi(x_2)\}}{\Omega}
+}
+
+is:
+
+% we need LSZ reduction formula to switch from position- to momentum-
+
+\eqnum{
+    & \begin{tikzpicture}
+        \begin{feynman}
+            \node[dot, label=above:\(z\)](z) at (0, 0);
+            \node[dot, label=left:\(x_\mathcal{A}\)](i1) at (-1, -1);
+            \node[dot, label=right:\(x_\mathcal{B}\)](i2) at (1, -1);
+            \node[dot, label=left:\(x_1\)](f1) at (-1, 1);
+            \node[dot, label=right:\(x_2\)](f2) at (1, 1);
+            \node[dot, label=left:\(w\)](w) at (0.5, -0.5);
+            \vertex(w0) at (1, 0);
+            \diagram*{
+                (i1) -- (z),
+                (i2) -- (w),
+                (w) -- (z),
+                (z) -- (f1),
+                (z) -- (f2),
+                (w) --[out=0, in=-45] (w0),
+                (w0) --[out=135, in=90] (w),
+            };
+        \end{feynman}
+    \end{tikzpicture} \\
+    =& \recip{2}(-i\lambda)^2
+    \int\ud^4wD_F(x_\mathcal{B}-w)D_F(w-z)D_F(w-w) \\
+    & \int\ud^4zD_F(x_1-z)D_F(x_2-z)D_F(x_\mathcal{A}-z)D_F(w-z) \\
+    =& \recip{2}(-i\lambda)^2
+    \int\ud^4w
+    \int\frac{\ud^4p_\mathcal{B}}{(2\pi)^4}\frac{i}{p_\mathcal{B}^2-m^2+i\epsilon}e^{-ip_\mathcal{B}\cdot(x_\mathcal{B}-w)} \\
+    & \int\frac{\ud^4p^\prime}{(2\pi)^4}\frac{i}{{p^\prime}^2-m^2+i\epsilon}e^{+ip^\prime\cdot(z-w)} \\
+    & \int\frac{\ud^4k}{(2\pi)^4}\frac{i}{k^2-m^2+i\epsilon}e^{-ik\cdot(w-w)} \\
+    & \cdot\int\ud^4z
+    \int\frac{\ud^4p_\mathcal{A}}{(2\pi)^4}\frac{i}{p_\mathcal{A}^2-m^2+i\epsilon}e^{-ip_\mathcal{A}\cdot(x_\mathcal{A}-z)} \\
+    & \int\frac{\ud^4p^\prime}{(2\pi)^4}\frac{i}{{p^\prime}^2-m^2+i\epsilon}e^{-ip^\prime\cdot(w-z)} \\
+    & \int\frac{\ud^4p_1}{(2\pi)^4}\frac{i}{p_1^2-m^2+i\epsilon}e^{+ip_1\cdot(x_1-z)} \\
+    & \int\frac{\ud^4p_2}{(2\pi)^4}\frac{i}{p_2^2-m^2+i\epsilon}e^{+ip_2\cdot(x_2-z)} \\
+    =& \recip{2}(-i\lambda)^2
+    \int\frac{\ud^4p_\mathcal{B}}{(2\pi)^4}\frac{i}{p_\mathcal{B}^2-m^2+i\epsilon} \\
+    & \int\frac{\ud^4p^\prime}{(2\pi)^4}\frac{i}{{p^\prime}^2-m^2+i\epsilon} \int\frac{\ud^4k}{(2\pi)^4}\frac{i}{k^2-m^2+i\epsilon} \\
+    & \cdot \int\frac{\ud^4p_\mathcal{A}}{(2\pi)^4}\frac{i}{p_\mathcal{A}^2-m^2+i\epsilon} \int\frac{\ud^4p^\prime}{(2\pi)^4}\frac{i}{{p^\prime}^2-m^2+i\epsilon} \\
+    & \int\frac{\ud^4p_1}{(2\pi)^4}\frac{i}{p_1^2-m^2+i\epsilon} \int\frac{\ud^4p_2}{(2\pi)^4}\frac{i}{p_2^2-m^2+i\epsilon} \\
+    & \cdot (2\pi)^4\delta^{(4)}(p_\mathcal{B}-p^\prime)(2\pi)^4\delta^{(4)}(p_\mathcal{A}+p^\prime-p_1-p_2)
+}
+
+Using LSZ reduction formula at Schwartz 6.19 and Peskin 7.42: 
+
+\eqnum{
+    \brakaket{p_3\dots p_n}{S}{p_1p_2} =& \left[
+        i\int\ud^4x_1e^{-ip_1x_1}(\DAlambert_1+m^2)
+    \right]\dots\left[
+        i\int\ud^4x_ne^{+ip_nx_n}(\DAlambert_n+m^2)
+    \right] \\
+    & \brakaket{\Omega}{T\{\phi(x_1)\phi(x_2)\phi(x_3)\dots\phi(x_n)\}}{\Omega},
+}
+
+where $\DAlambert = (\dpartial{}{x^\mu})^2 = \partial_t^2-\vec{\partial}_x^2$.
+
+The above diagram's contributing to 
+
+\eqnum{
+    \brakaket{\Omega}{T\{\phi(x_\mathcal{A})\phi(x_\mathcal{B})\phi(x_1)\phi(x_2)\}}{\Omega}
+}
+
+is:
+
+\eqnum{
+    & \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (p) at (0, 0);
+            \vertex(i1) at (-1, -1);
+            \vertex(i2) at (1, -1);
+            \vertex(f1) at (-1, 1);
+            \vertex(f2) at (1, 1);
+            \vertex(k) at (0.5, -0.5);
+            \vertex(k0) at (1, 0);
+            \diagram*{
+                (i1) --[fermion, edge label=\(p_\mathcal{A}\)] (p),
+                (i2) --[fermion, edge label=\(p_\mathcal{B}\)] (k),
+                (k) --[fermion, edge label=\(p^\prime\)] (p),
+                (p) --[fermion, edge label=\(p_1\)] (f1),
+                (p) --[fermion, edge label=\(p_2\)] (f2),
+                (k) --[fermion, out=0, in=-45, edge label'=\(k\)] (k0),
+                (k0) --[out=135, in=90] (k),
+            };
+        \end{feynman}
+    \end{tikzpicture} \\
+    =& \half{1}
+    \int\frac{\ud^4p^\prime}{(2\pi)^4}\frac{i}{{p^\prime}^2-m^2}
+    \int\frac{\ud^4k}{(2\pi)^4}\frac{i}{k^2-m^2} \\
+    & \times(2\pi)^4\delta^{(4)}(p_\mathcal{B}-p^\prime)(2\pi)^4\delta^{(4)}(p_\mathcal{A}+p^\prime-p_1-p_2)
+}
+
+where the external particles' Feynman propagators are cancelled. Because the $\partial_t^2$ yields 0 and $i$ in LSZ reduction formula are factored out by $\DAlambert^2+m^2$. 
+
+% \eqnum{
+%     \begin{tikzpicture}
+%         \begin{feynman}
+%             \node[dot, label=above:\(z\)](z);
+%             \node[dot, below left=2cm of z, label=left:\(x_\mathcal{A}\)](i1);
+%             \node[dot, below right=2cm of z, label=right:\(x_\mathcal{B}\)](i2);
+%             \node[dot, above left=2cm of z, label=left:\(x_1\)](f1);
+%             \node[dot, above right=2cm of z, label=right:\(x_2\)](f2);
+%             \node[dot, below right=1cm of z, label=left:\(w\)](w);
+%             \vertex[right=1.414cm of z](w0);
+%             \diagram*{
+%                 (i1) -- (z),
+%                 (i2) -- (w),
+%                 (w) -- (z),
+%                 (z) -- (f1),
+%                 (z) -- (f2),
+%                 (w) --[out=0, in=-45] (w0),
+%                 (w0) --[out=135, in=90] (w),
+%             };
+%         \end{feynman}
+%     \end{tikzpicture}
+% }
+
+% \eqnum{
+%     \begin{tikzpicture}
+%         \begin{feynman}
+%             \vertex (p);
+%             \vertex[above left=2cm of p](f1);
+%             \vertex[above right=2cm of p](f2);
+%             \vertex[below left=2cm of p](i1);
+%             \vertex[below right=2cm of p](i2);
+%             \vertex[below right=1cm of p](k);
+%             \vertex[right=1.414cm of p](k0);
+%             \diagram*{
+%                 (i1) --[fermion, edge label=\(p_\mathcal{A}\)] (p),
+%                 (i2) --[fermion, edge label=\(p_\mathcal{B}\)] (k),
+%                 (k) --[fermion, edge label=\(p^\prime\)] (p),
+%                 (p) --[fermion, edge label=\(p_1\)] (f1),
+%                 (p) --[fermion, edge label=\(p_2\)] (f2),
+%                 (k) --[fermion, out=0, in=-45, edge label'=\(k\)] (k0),
+%                 (k0) --[out=135, in=90] (k),
+%             };
+%         \end{feynman}
+%     \end{tikzpicture}
+% }
+
+% \feynmandiagram[vertical=a to b]{
+%     i1 [particle=\(\bar{\nu}_{e}\)] -- [anti fermion] a -- [anti fermion] i2 [particle=\(\bar{\nu}_{e}\)],
+%     f1 [particle=\(e^{-}\)] -- [fermion] b -- [fermion] f2 [particle=\(e^{-}\)],
+%     a -- [boson, edge label=\(Z^{0}\)] b,
+% };
+
+% \feynmandiagram[horizontal=a to b]{
+%     i1 [particle=\(\bar{\nu}_{e}\)] -- [anti fermion] a -- [anti fermion] i2 [particle=\(e^{-}\)],
+%     f1 [particle=\(\bar{\nu}_{e}\)] -- [fermion] b -- [fermion] f2 [particle=\(e^{-}\)],
+%     a -- [boson, edge label=\(W^{-}\)] b,
+% }; 
