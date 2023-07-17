@@ -17,13 +17,13 @@
 \usepackage{gensymb}
 \usepackage[hyperfootnotes=false,linktoc=page,pdfpagelayout=TwoPageRight]{hyperref}
 \usepackage{lettrine}
-\usepackage{cfr-lm}
+% \usepackage{cfr-lm}
 \usepackage{makecell}
 \usepackage{mathtools}
 \usepackage{multicol}
 \usepackage[defaultlines=4,all]{nowidow}
 \usepackage{titlesec}
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}
 \usepackage{wrapfig}
 \usepackage{lipsum}
 \usepackage{xcolor}
@@ -189,9 +189,9 @@
 \pagenumbering{gobble}
 \pagestyle{empty}
 \newgeometry{bottom=6em}
-    \renewcommand{\baselinestretch}{0.94}\normalsize
-            \tableofcontents
-    \renewcommand{\baselinestretch}{1.0}\normalsize
+\renewcommand{\baselinestretch}{0.94}\normalsize
+\tableofcontents
+\renewcommand{\baselinestretch}{1.0}\normalsize
 \restoregeometry
 \pagestyle{fancy}
 
