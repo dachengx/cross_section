@@ -156,9 +156,9 @@ Set $(x-y)$ as $\Delta x$, then
     =& \frac{i}{E_{\bf{p^\prime}}^2}.
 }
 
-\subsubsection{3.6}
+\subsubsection{3.5}
 
-Revisit the formula between 3.5 and 3.6, it is from 2.45. 
+Revisit the equation between 3.5 and 3.6, it is from equation 2.45.
 
 \subsubsection{3.17}
 
@@ -256,11 +256,42 @@ But
     =& 0
 }
 
+\subsubsection{3.117}
+
+Revisit the equation 3.117:
+
+$D_R(x-y)$ was defined at equation 2.54 and 2.55:
+
+\eqnum{
+    D_R(x-y) \equiv& \theta(x^0-y^0)\brakaket{0}{\left[\phi(x),\phi(y)\right]}{0} \\
+    =& \theta(x^0-y^0)\int\frac{\ud^p}{(2\pi)^3}\recip{2E_\bf{p}}(e^{-ip\cdot(x-y)}-e^{ip\cdot (x-y)})
+}
+
+in Dirac field's context, it should be:
+
+\eqnum{
+    D_R(x-y) \equiv& \theta(x^0-y^0)\brakaket{0}{\left[\psi(x),\bar{\psi}(y)\right]}{0}.
+}
+
+Thus, also combine 3.114 and 3.115, then
+
+\eqnum{
+    & (i\slashed{\partial}+m)D_R(x-y) \\
+    =& \left(i\slashed{\partial}(\theta(x^0-y^0))\right)\brakaket{0}{\left[\psi(x),\bar{\psi}(y)\right]}{0}
+     + \theta(x^0-y^0)\left(i\slashed{\partial}\brakaket{0}{\left[\psi(x),\bar{\psi}(y)\right]}{0}+m\right) \\
+    =& 0 + \theta(x^0-y^0)(i\slashed{\partial}+m)\brakaket{0}{\left[\psi(x),\bar{\psi}(y)\right]}{0} \\
+    =& \theta(x^0-y^0)\left[
+        (i\slashed{\partial}+m)\int\frac{\ud^3p}{(2\pi)^3}\recip{2E_\bf{p}}e^{-ip\cdot (x-y)}
+        -(i\slashed{\partial}+m)\int\frac{\ud^3p}{(2\pi)^3}\recip{2E_\bf{p}}e^{ip\cdot (x-y)}
+    \right] \\
+    =& \theta(x^0-y^0)\brakaket{0}{\{\psi(x),\bar{\psi}(y)\}}{0} = S_R(x-y)
+}
+
 \subsubsection{4.52}
 
 Revisit the equation 4.52:
 
-$V_i$ is the value of each piece, $n_i$ is the number of piece in a possible diagram, 
+$V_i$ is the value of each piece, $n_i$ is the number of piece in a possible diagram,
 while the possible diagram can have infinite number of the same piece. The sum of all diagram is:
 
 \eqnum{
@@ -278,8 +309,8 @@ while the possible diagram can have infinite number of the same piece. The sum o
     \right),
 }
 
-here "all $\{n_i\}$" is all possible ordered sets of $\{n_i, n_2, n_3, \dots\}$, 
-where $n_i$ can be from $0$ to $\infty$. 
+here "all $\{n_i\}$" is all possible ordered sets of $\{n_i, n_2, n_3, \dots\}$,
+where $n_i$ can be from $0$ to $\infty$.
 
 \eqnum{
     =& \left(
@@ -311,8 +342,8 @@ here the summation includes $n_i$ from $0$ to $\infty$,
 
 \subsubsection{4.74}
 
-Revisit the equation 4.74, it is from 4.66, 4.67, and 4.68, 
-where normalization in 4.66 contracts the $\abs{\phi(\bf{k})}^2$ in 4.74. 
+Revisit the equation 4.74, it is from 4.66, 4.67, and 4.68,
+where normalization in 4.66 contracts the $\abs{\phi(\bf{k})}^2$ in 4.74.
 
 \subsubsection{4.77}
 
@@ -337,16 +368,14 @@ Revisit the equation 4.77:
 
 \subsubsection{4.102}
 
-Revisit the equation 4.102, when calculating $\brakaket{\bf{p}_1\bf{p}_2}{iT}{\bf{p}_\mathcal{A}\bf{p}_\mathcal{B}}$ based on \textit{position-space Feynman rules}, 
-like 4.44, one of the diagram contributing to 
+Revisit the equation 4.102, when calculating $\brakaket{\bf{p}_1\bf{p}_2}{iT}{\bf{p}_\mathcal{A}\bf{p}_\mathcal{B}}$ based on \textit{position-space Feynman rules},
+like 4.44, one of the diagram contributing to
 
 \eqnum{
     \brakaket{\Omega}{T\{\phi(x_\mathcal{A})\phi(x_\mathcal{B})\phi(x_1)\phi(x_2)\}}{\Omega}
 }
 
 is:
-
-% we need LSZ reduction formula to switch from position- to momentum-
 
 \eqnum{
     & \begin{tikzpicture}
@@ -390,7 +419,7 @@ is:
     & \cdot (2\pi)^4\delta^{(4)}(p_\mathcal{B}-p^\prime)(2\pi)^4\delta^{(4)}(p_\mathcal{A}+p^\prime-p_1-p_2)
 }
 
-Using LSZ reduction formula at Schwartz 6.19 and Peskin 7.42: 
+Using LSZ reduction formula at Schwartz 6.19 and Peskin 7.42:
 
 \eqnum{
     \brakaket{p_3\dots p_n}{S}{p_1p_2} =& \left[
@@ -403,7 +432,7 @@ Using LSZ reduction formula at Schwartz 6.19 and Peskin 7.42:
 
 where $\DAlambert = (\dpartial{}{x^\mu})^2 = \partial_t^2-\vec{\partial}_x^2$.
 
-The above diagram's contributing to 
+The above diagram's contributing to
 
 \eqnum{
     \brakaket{\Omega}{T\{\phi(x_\mathcal{A})\phi(x_\mathcal{B})\phi(x_1)\phi(x_2)\}}{\Omega}
@@ -438,62 +467,77 @@ is:
     & \times(2\pi)^4\delta^{(4)}(p_\mathcal{B}-p^\prime)(2\pi)^4\delta^{(4)}(p_\mathcal{A}+p^\prime-p_1-p_2)
 }
 
-where the external particles' Feynman propagators are cancelled. Because the $\partial_t^2$ yields 0 and $i$ in LSZ reduction formula are factored out by $\DAlambert^2+m^2$. 
+where the external particles' Feynman propagators are cancelled. Because the $\partial_t^2$ yields 0 and $i$ in LSZ reduction formula are factored out by $\DAlambert^2+m^2$.
 
-% \eqnum{
-%     \begin{tikzpicture}
-%         \begin{feynman}
-%             \node[dot, label=above:\(z\)](z);
-%             \node[dot, below left=2cm of z, label=left:\(x_\mathcal{A}\)](i1);
-%             \node[dot, below right=2cm of z, label=right:\(x_\mathcal{B}\)](i2);
-%             \node[dot, above left=2cm of z, label=left:\(x_1\)](f1);
-%             \node[dot, above right=2cm of z, label=right:\(x_2\)](f2);
-%             \node[dot, below right=1cm of z, label=left:\(w\)](w);
-%             \vertex[right=1.414cm of z](w0);
-%             \diagram*{
-%                 (i1) -- (z),
-%                 (i2) -- (w),
-%                 (w) -- (z),
-%                 (z) -- (f1),
-%                 (z) -- (f2),
-%                 (w) --[out=0, in=-45] (w0),
-%                 (w0) --[out=135, in=90] (w),
-%             };
-%         \end{feynman}
-%     \end{tikzpicture}
-% }
+\subsubsection{4.107}
 
-% \eqnum{
-%     \begin{tikzpicture}
-%         \begin{feynman}
-%             \vertex (p);
-%             \vertex[above left=2cm of p](f1);
-%             \vertex[above right=2cm of p](f2);
-%             \vertex[below left=2cm of p](i1);
-%             \vertex[below right=2cm of p](i2);
-%             \vertex[below right=1cm of p](k);
-%             \vertex[right=1.414cm of p](k0);
-%             \diagram*{
-%                 (i1) --[fermion, edge label=\(p_\mathcal{A}\)] (p),
-%                 (i2) --[fermion, edge label=\(p_\mathcal{B}\)] (k),
-%                 (k) --[fermion, edge label=\(p^\prime\)] (p),
-%                 (p) --[fermion, edge label=\(p_1\)] (f1),
-%                 (p) --[fermion, edge label=\(p_2\)] (f2),
-%                 (k) --[fermion, out=0, in=-45, edge label'=\(k\)] (k0),
-%                 (k0) --[out=135, in=90] (k),
-%             };
-%         \end{feynman}
-%     \end{tikzpicture}
-% }
+Revisit the equation 4.107:
 
-% \feynmandiagram[vertical=a to b]{
-%     i1 [particle=\(\bar{\nu}_{e}\)] -- [anti fermion] a -- [anti fermion] i2 [particle=\(\bar{\nu}_{e}\)],
-%     f1 [particle=\(e^{-}\)] -- [fermion] b -- [fermion] f2 [particle=\(e^{-}\)],
-%     a -- [boson, edge label=\(Z^{0}\)] b,
-% };
+Given equation 3.99 and 3.100, Dirac field operators in \textit{interaction picture} are:
 
-% \feynmandiagram[horizontal=a to b]{
-%     i1 [particle=\(\bar{\nu}_{e}\)] -- [anti fermion] a -- [anti fermion] i2 [particle=\(e^{-}\)],
-%     f1 [particle=\(\bar{\nu}_{e}\)] -- [fermion] b -- [fermion] f2 [particle=\(e^{-}\)],
-%     a -- [boson, edge label=\(W^{-}\)] b,
-% }; 
+\eqnum{
+    \psi(x) =& \int\frac{\ud^3p}{(2\pi)^3}\recip{\sqrt{2E_\bf{p}}}\sum_s\left(
+        a_\bf{p}^su^s(p)e^{-ip\cdot x} + b_\bf{p}^{s\dagger}v^s(p)e^{ip\cdot x}
+    \right) \\
+    \bar{\psi}(x) =& \int\frac{\ud^3p}{(2\pi)^3}\recip{\sqrt{2E_\bf{p}}}\sum_s\left(
+        b_\bf{p}^s\bar{v}^s(p)e^{-ip\cdot x} + a_\bf{p}^{s\dagger}\bar{u}^s(p)e^{ip\cdot x}
+    \right).
+}
+
+Decompose the Dirac field operators into positive- and negative- frequency parts:
+
+\eqnum{
+    \psi(x) =& \psi^+(x) + \psi^-(x) \\
+    \bar{\psi}(x) =& \bar{\psi}^+(x) + \bar{\psi}^-(x),
+}
+
+where
+
+\eqnum{
+    \psi^+(x) =& \int\frac{\ud^3p}{(2\pi)^3}\recip{\sqrt{2E_\bf{p}}}\sum_s a_\bf{p}^su^s(p)e^{-ip\cdot x} \\
+    \psi^-(x) =& \int\frac{\ud^3p}{(2\pi)^3}\recip{\sqrt{2E_\bf{p}}}\sum_s b_\bf{p}^{s\dagger}v^s(p)e^{ip\cdot x} \\
+    \bar{\psi}^+(x) =& \int\frac{\ud^3p}{(2\pi)^3}\recip{\sqrt{2E_\bf{p}}}\sum_s b_\bf{p}^s\bar{v}^s(p)e^{-ip\cdot x} \\
+    \bar{\psi}^-(x) =& \int\frac{\ud^3p}{(2\pi)^3}\recip{\sqrt{2E_\bf{p}}}\sum_s a_\bf{p}^{s\dagger}\bar{u}^s(p)e^{ip\cdot x}.
+}
+
+Similar to 4.33, if $x^0>y^0$,
+
+\eqnum{
+    & T\left[\psi(x)\bar{\psi}(y)\right] \\
+    =& \psi^+(x)\bar{\psi}^-(y) + \bar{\psi}^-(y)\psi^+(x) + \psi^-(x)\bar{\psi}^+(y) + \psi^-(x)\bar{\psi}^+(y) + \left[\psi^+(x), \bar{\psi}^-(y)\right].
+}
+
+So, based on 3.114 and 3.121,
+
+\eqnum{
+    \brakaket{0}{T\left[\psi(x)\bar{\psi}(y)\right]}{0} =& \brakaket{0}{N\left[\psi(x)\bar{\psi}(y)\right]}{0} + \brakaket{0}{\left[\psi^+(x), \bar{\psi}^-(y)\right]}{0} \\
+    \brakaket{0}{\left[\psi^+(x), \bar{\psi}^-(y)\right]}{0}
+    =& \int\frac{\ud^3p}{(2\pi)^3}\recip{2E_\bf{p}}\sum_s u^s\bar{u}^s e^{-ip\cdot (x-y)} + 0 \\
+    =& \brakaket{0}{\psi(x)\bar{\psi}(y)}{0} = \brakaket{0}{\{\psi^+(x), \bar{\psi}^-(y)\}}{0},
+}
+
+because in $\brakaket{0}{\bar{\psi}^-(y)\psi^+(x)}{0}$ all the $a_\bf{p}$ are at the right of all the $a^\dagger_\bf{p}$.
+
+Similarly, when $x^0<y^0$, based on 3.115 and 3.121,
+
+\eqnum{
+    \brakaket{0}{T\left[\bar{\psi}(y)\psi(x)\right]}{0} =& \brakaket{0}{N\left[\bar{\psi}(y)\psi(x)\right]}{0} + \brakaket{0}{\left[\bar{\psi}^+(y), \psi^-(x)\right]}{0} \\
+    \brakaket{0}{\left[\bar{\psi}^+(y), \psi^-(x)\right]}{0} =& -\brakaket{0}{\bar{\psi}(y)\psi(x)}{0} \\
+    =& -\brakaket{0}{\{\bar{\psi}^+(y), \psi^-(x)\}}{0}.
+}
+
+So that
+
+\eqnum{
+    S_F(x-y) = \begin{cases}
+        \brakaket{0}{\{\psi^+(x), \bar{\psi}^-(y)\}}{0}\ \mathrm{for}\ x^0>y^0 \\
+        -\brakaket{0}{\{\bar{\psi}^+(y), \psi^-(x)\}}{0}\ \mathrm{for}\ x^0<y^0
+    \end{cases}
+}
+
+and 
+
+\eqnum{
+    T\left[\psi(x)\bar{\psi}(y)\right] =& N\left[\psi(x)\bar{\psi}(y)\right] + \wick{\c \psi(x)\bar{\c \psi}(y)} \\
+    =& S_F(x-y).
+}
