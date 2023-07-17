@@ -27,7 +27,7 @@ The python codes in this repository are licensed under MIT license.
 ## How to generate the handbook
 
 ```
-latexmk -C && latexmk --pdflatex main.tex --shell-escape
+latexmk -C && latexmk --lualatex main.tex --shell-escape
 ```
 
 ## Credit of template usage
