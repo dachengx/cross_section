@@ -26,6 +26,8 @@ The python codes in this repository are licensed under MIT license.
 
 ## How to generate the handbook
 
+inside `note` folder, run
+
 ```
 latexmk -C && latexmk --lualatex main.tex --shell-escape
 ```
