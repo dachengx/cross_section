@@ -538,8 +538,32 @@ So that
 and 
 
 \eqnum{
-    T\left[\psi(x)\bar{\psi}(y)\right] =& N\left[\psi(x)\bar{\psi}(y)\right] + \wick{\c \psi(x)\bar{\c \psi}(y)} \\
+    T\left[\psi(x)\bar{\psi}(y)\right]
+    =& N\left[\psi(x)\bar{\psi}(y)\right] + \wick{\c \psi(x)\bar{\c \psi}(y)} \\
     =& S_F(x-y).
+}
+
+\subsubsection{5.10}
+
+Revisit the equation 5.10:
+
+From 5.5, given
+
+\eqnum{
+    \mathrm{tr}(\gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma)
+    =& 4(g^{\mu\nu}g^{\rho\sigma} - g^{\mu\rho}g^{\nu\sigma} + g^{\mu\sigma}g^{\nu\rho}),
+}
+
+then
+
+\eqnum{
+    \mathrm{tr}\left[(\slashed{p}^\prime-m_e)\gamma^\mu(\slashed{p}-m_e)\gamma^\nu\right]
+    =& \mathrm{tr}\left[\gamma^\rho p^\prime_\rho\gamma^\mu\gamma^\sigma p_\sigma\gamma^\nu - \gamma^\mu\gamma^\nu m_e^2\right] \\
+    =& \mathrm{tr}\left[p^\prime_\rho p_\sigma - \gamma^\mu\gamma^\nu m_e^2\right] \\
+    =& p^\prime_\rho p_\sigma\mathrm{tr}(\gamma^\rho\gamma^\mu\gamma^\sigma\gamma^\nu) - \mathrm{tr}(\gamma^\mu\gamma^\nu) m_e^2 \\
+    =& 4p^\prime_\rho p_\sigma(g^{\rho\mu}g^{\sigma\nu} - g^{\rho\sigma}g^{\mu\nu} + g^{\rho\nu}g^{\mu\sigma}) - 4g^{\mu\nu}m_e^2 \\
+    =& 4\left[p^{\prime\mu} p^\nu - g^{\mu\nu}p^\prime_\rho p^\rho + p^{\prime\nu}p^\mu - g^{\mu\nu}m_e^2\right] \\
+    =& 4\left[p^{\prime\mu} p^\nu + p^{\prime\nu}p^\mu - g^{\mu\nu}(p\cdot p^\prime + m_e^2)\right].
 }
 
 \subsection{Things unclear to me in Peskin's book}
