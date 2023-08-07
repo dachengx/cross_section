@@ -185,24 +185,24 @@ Revisit the equation 3.50:
     =& \begin{pmatrix}
         \sqrt{
             \bigl(\begin{smallmatrix}
-                E+p^3 & \\
-                & E-p^3
+                E-p^3 & \\
+                & E+p^3
             \end{smallmatrix}\bigr)
         }\xi \\
         \sqrt{
             \bigl(\begin{smallmatrix}
-                E-p^3 & \\
-                & E+p^3
+                E+p^3 & \\
+                & E-p^3
             \end{smallmatrix}\bigr)
         }\xi
     \end{pmatrix} \\
     =& \begin{pmatrix}
         \bigl(\begin{smallmatrix}
-            \sqrt{E+p^3} & \\
-            & \sqrt{E-p^3}
+            \sqrt{E-p^3} & \\
+            & \sqrt{E+p^3}
         \end{smallmatrix}\bigr)\xi \\
         \bigl(\begin{smallmatrix}
-            \sqrt{E-p^3} & \\
+            \sqrt{E+p^3} & \\
             & \sqrt{E+p^3}
         \end{smallmatrix}\bigr)\xi
     \end{pmatrix} \\
@@ -211,10 +211,39 @@ Revisit the equation 3.50:
             \sqrt{E+p^3}\left(\half{1-\sigma^3}\right) + \sqrt{E-p^3}\left(\half{1+\sigma^3}\right)
         \right]\xi \\
         \left[
-            \sqrt{E-p^3}\left(\half{1+\sigma^3}\right) + \sqrt{E+p^3}\left(\half{1-\sigma^3}\right)
+            \sqrt{E+p^3}\left(\half{1+\sigma^3}\right) + \sqrt{E-p^3}\left(\half{1-\sigma^3}\right)
         \right]\xi
     \end{pmatrix}
 }
+
+\subsubsection{3.52}
+
+Revisit the equation 3.52:
+
+\eqnum{
+    u(p) =& \begin{pmatrix}
+        \left[
+            \sqrt{E+p^3}\left(\half{1-\sigma^3}\right) + \sqrt{E-p^3}\left(\half{1+\sigma^3}\right)
+        \right]\begin{pmatrix}1 \\ 0\end{pmatrix} \\
+        \left[
+            \sqrt{E+p^3}\left(\half{1+\sigma^3}\right) + \sqrt{E-p^3}\left(\half{1-\sigma^3}\right)
+        \right]\begin{pmatrix}1 \\ 0\end{pmatrix}
+    \end{pmatrix} \\
+    =& \begin{pmatrix}
+        \left[
+            \sqrt{E+p^3}\begin{pmatrix}0 & 0 \\ 0 & 1\end{pmatrix} + \sqrt{E-p^3}\begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix}
+        \right]\begin{pmatrix}1 \\ 0\end{pmatrix} \\
+        \left[
+            \sqrt{E+p^3}\begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix} + \sqrt{E-p^3}\begin{pmatrix}0 & 0 \\ 0 & 1\end{pmatrix}
+        \right]\begin{pmatrix}1 \\ 0\end{pmatrix}
+    \end{pmatrix} \\
+    =& \begin{pmatrix}
+        \sqrt{E - p^3} \begin{pmatrix}1 \\ 0\end{pmatrix} \\
+        \sqrt{E + p^3} \begin{pmatrix}1 \\ 0\end{pmatrix}
+    \end{pmatrix}
+},
+
+which is a \textit{right-handed} particle if massless.
 
 \subsubsection{3.65}
 
@@ -588,3 +617,5 @@ Near equation 3.8, how to judge whether a vector is Lorentz vector?
 Near equation 3.34, how to show that $\bar{\psi}\gamma^\mu\psi$ is a Lorentz vector? 
 
 Near 3.68, what is the calculation rules of $\gamma^{\mu\nu\rho}=\gamma^{\left[\mu\right.}\gamma^\nu\gamma^{\left.\rho\right]}$ and $\gamma^{\mu\nu\rho\sigma}=\gamma^{\left[\mu\right.}\gamma^\nu\gamma^\rho\gamma^{\left.\sigma\right]}$?
+
+Near 3.113, why a right-handed spinor $v(p)$ corresponds to a positron?
