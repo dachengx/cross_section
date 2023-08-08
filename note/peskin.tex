@@ -652,9 +652,69 @@ Given 5.5, so that
     =& \half{1}p^\prime_\alpha p_\beta\left[\mathrm{tr}\left[\gamma^\alpha\gamma^\mu\gamma^\beta\gamma^\nu\right] + \mathrm{tr}\left[\gamma^\alpha\gamma^\mu\gamma^\beta\gamma^\nu\gamma^5\right]\right] \\
     =& \half{1}p^\prime_\alpha p_\beta\left[4(g^{\alpha\mu}g^{\beta\nu}-g^{\alpha\beta}g^{\mu\nu}+g^{\alpha\nu}g^{\mu\beta})-4i\epsilon^{\alpha\mu\beta\nu}\right] \\
     =& 2p^\prime_\alpha p_\beta(g^{\alpha\mu}g^{\beta\nu}-g^{\alpha\beta}g^{\mu\nu}+g^{\alpha\nu}g^{\mu\beta}-i\epsilon^{\alpha\mu\beta\nu}) \\
-    =& 2(p^{\prime\mu}p^{\nu}-g^{\mu\nu}p\cdot p^\prime+p^{\prime\nu}p^\mu-i\epsilon^{\alpha\mu\beta\nu}p^\prime_\alpha p_\beta).
+    =& 2(p^{\prime\mu}p^\nu-g^{\mu\nu}p\cdot p^\prime+p^{\prime\nu}p^\mu-i\epsilon^{\alpha\mu\beta\nu}p^\prime_\alpha p_\beta).
 }
 
+\subsubsection{5.21}
+
+Revisit the equation 5.21:
+
+\eqnum{
+    & \abs{\mathcal{M}}^2 \\
+    =& \frac{4e^4}{q^4}
+    (p^{\prime\mu}p^\nu+p^{\prime\nu}p^\mu-g^{\mu\nu}p\cdot p^\prime-i\epsilon^{\alpha\mu\beta\nu}p^\prime_\alpha p_\beta)
+    (k_\mu k^\prime_\nu+k_\nu k^\prime_\mu-g_{\mu\nu}k\cdot k^\prime-i\epsilon_{\rho\mu\sigma\nu}k^\rho k^{\prime\sigma}) \\
+    =& \frac{4e^4}{q^4}\{
+        \left[(p^\prime\cdot k)(p\cdot k^\prime)+(p\cdot k)(p^\prime\cdot k^\prime)-(p\cdot p^\prime)(k\cdot k^\prime)-ip^{\prime\mu}p^\nu\epsilon_{\rho\mu\sigma\nu}k^\rho k^{\prime\sigma}\right] \\
+        &+ \left[(p\cdot k)(p^\prime\cdot k^\prime)+(p^\prime\cdot k)(p\cdot k^\prime)-(p\cdot p^\prime)(k\cdot k^\prime)-ip^{\prime\nu}p^\mu\epsilon_{\rho\mu\sigma\nu}k^\rho k^{\prime\sigma}\right] \\
+        &+ \left[-(p\cdot p^\prime)(k\cdot k^\prime)-(p\cdot p^\prime)(k\cdot k^\prime)+4(p\cdot p^\prime)(k\cdot k^\prime)+ig^{\mu\nu}\epsilon_{\rho\mu\sigma\nu}k^\rho k^{\prime\sigma}\right] \\
+        &+ \left[-ik_\mu k^\prime_\nu\epsilon^{\alpha\mu\beta\nu}p^\prime_\alpha p_\beta-ik_\nu k^\prime_\mu\epsilon^{\alpha\mu\beta\nu}p^\prime_\alpha p_\beta+ik\cdot k^\prime g_{\mu\nu}\epsilon^{\alpha\mu\beta\nu}p^\prime_\alpha p_\beta-\epsilon^{\alpha\mu\beta\nu}\epsilon_{\rho\mu\sigma\nu}p^\prime_\alpha p_\beta k^\rho k^{\prime\sigma}\right]
+    \}
+}
+
+$g^{\mu\nu}$ is non-zero only when $\mu=\nu$, but Levi-Civita symbol $\epsilon$ is zero if any two indices are equal, so the terms analogue to $g^{\mu\nu}\epsilon_{\rho\mu\sigma\nu}k^\rho k^{\prime\sigma}$ are zero.
+
+Additionally, it takes 3 iterations to change $\epsilon_{\rho\nu\sigma\mu}$ to $\epsilon_{\rho\mu\sigma\nu}$, so $\epsilon_{\rho\mu\sigma\nu} + \epsilon_{\rho\nu\sigma\mu}=0$,
+
+\eqnum{
+    & p^{\prime\mu}p^\nu\epsilon_{\rho\mu\sigma\nu}k^\rho k^{\prime\sigma} + p^{\prime\nu}p^\mu\epsilon_{\rho\mu\sigma\nu}k^\rho k^{\prime\sigma} \\
+    =& p^{\prime\mu}p^\nu\epsilon_{\rho\mu\sigma\nu}k^\rho k^{\prime\sigma} + p^{\prime\mu}p^\nu\epsilon_{\rho\nu\sigma\mu}k^\rho k^{\prime\sigma} \\
+    =& p^{\prime\mu}p^\nu(\epsilon_{\rho\mu\sigma\nu} + \epsilon_{\rho\nu\sigma\mu})k^\rho k^{\prime\sigma} = 0
+}
+
+So that,
+
+\eqnum{
+    & \abs{\mathcal{M}}^2 \\
+    =& \frac{4e^4}{q^4}\left[
+        2(p\cdot k)(p^\prime\cdot k^\prime)+2(p^\prime\cdot k)(p\cdot k^\prime)-\epsilon^{\alpha\mu\beta\nu}\epsilon_{\rho\mu\sigma\nu}p^\prime_\alpha p_\beta k^\rho k^{\prime\sigma}
+    \right]
+}
+
+Given A.30:
+
+\eqnum{
+    \epsilon^{\alpha\beta\mu\nu}\epsilon_{\alpha\beta\rho\sigma} = -2(\delta^\mu_{\phantom{x}\rho}\delta^\nu_{\phantom{x}\sigma}-\delta^\mu_{\phantom{x}\sigma}\delta^\nu_{\phantom{x}\rho})
+}
+
+\eqnum{
+    & \abs{\mathcal{M}}^2 \\
+    =& \frac{8e^4}{q^4}\left[
+        (p\cdot k)(p^\prime\cdot k^\prime)+(p^\prime\cdot k)(p\cdot k^\prime)+(\delta^\alpha_{\phantom{x}\rho}\delta^\beta_{\phantom{x}\sigma}-\delta^\alpha_{\phantom{x}\sigma}\delta^\beta_{\phantom{x}\rho})p^\prime_\alpha p_\beta k^\rho k^{\prime\sigma}
+    \right] \\
+    =& \frac{8e^4}{q^4}\left((p\cdot k)(p^\prime\cdot k^\prime)+(p^\prime\cdot k)(p\cdot k^\prime)+(p^\prime\cdot k)(p\cdot k^\prime)-(p\cdot k)(p^\prime\cdot k^\prime)\right) \\
+    =& \frac{16e^4}{q^4}(p^\prime\cdot k)(p\cdot k^\prime).
+}
+
+Using the kinematical functions above 5.11,
+
+\eqnum{
+    &\phantom{=} \abs{\mathcal{M}}^2 \\
+    &= \frac{16e^4}{q^4}(p^\prime\cdot k)(p\cdot k^\prime) \\
+    &= \frac{e^4}{E^4}(E^2+E\abs{\bf{k}}\cos\theta)^2 \\
+    &= \frac{e^4}{E^4}(E^2+E\sqrt{E^2-m_\mu^2}\cos\theta)^2 \\
+    \underset{m_\mu=0}&{\approx} e^4(1+\cos\theta)^2
+}
 
 \subsection{Things unclear to me in Peskin's book}
 
