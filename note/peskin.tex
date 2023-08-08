@@ -608,6 +608,54 @@ So that
     =& \frac{8e^4}{q^4}\left[(p\cdot k)(p^\prime\cdot k^\prime) + (p\cdot k^\prime)(p^\prime\cdot k)+m_\mu^2(p\cdot p^\prime)+m_e^2(k\cdot k^\prime)+2 m_e^2 m_\mu^2\right]
 }
 
+\subsubsection{5.19}
+
+Revisit the equation 5.19:
+
+\eqnum{
+    & \sum_{\mathrm{spins}}\abs{\bar{v}(p^\prime)\gamma^\mu(\half{1+\gamma^5})u(p)}^2 \\
+    =& \mathrm{tr}\left[\slashed{p}^\prime\gamma^\mu(\half{1+\gamma^5})\slashed{p}\gamma^\nu(\half{1+\gamma^5})\right] \\
+    =& \mathrm{tr}\left[\gamma^\alpha p^\prime_\alpha\gamma^\mu(\half{1+\gamma^5})\gamma^\beta p_\beta\gamma^\nu(\half{1+\gamma^5})\right]
+}
+
+Given 3.71:
+
+\eqnum{
+    \{\gamma^5,\gamma^\mu\} = 0,
+}
+
+\eqnum{
+    & \mathrm{tr}\left[\gamma^\alpha p^\prime_\alpha\gamma^\mu(\half{1+\gamma^5})\gamma^\beta p_\beta\gamma^\nu(\half{1+\gamma^5})\right] \\
+    =& -\mathrm{tr}\left[\gamma^\alpha p^\prime_\alpha\gamma^\mu\gamma^\beta p_\beta(\half{1+\gamma^5})\gamma^\nu(\half{1+\gamma^5})\right] \\
+    =& \mathrm{tr}\left[\gamma^\alpha p^\prime_\alpha\gamma^\mu\gamma^\beta p_\beta\gamma^\nu(\half{1+\gamma^5})^2\right].
+}
+
+From 5.17:
+
+\eqnum{
+    \half{1+\gamma^5} = \begin{pmatrix}
+        0 & 0 \\
+        0 & 1
+    \end{pmatrix},
+}
+
+\eqnum{
+    \left(\half{1+\gamma^5}\right)^2 = \half{1+\gamma^5}.
+}
+
+Given 5.5, so that
+
+\eqnum{
+    & \mathrm{tr}\left[\gamma^\alpha p^\prime_\alpha\gamma^\mu\gamma^\beta p_\beta\gamma^\nu(\half{1+\gamma^5})^2\right] \\
+    =& \mathrm{tr}\left[\gamma^\alpha p^\prime_\alpha\gamma^\mu\gamma^\beta p_\beta\gamma^\nu(\half{1+\gamma^5})\right] \\
+    =& p^\prime_\alpha p_\beta\mathrm{tr}\left[\gamma^\alpha \gamma^\mu\gamma^\beta \gamma^\nu(\half{1+\gamma^5})\right] \\
+    =& \half{1}p^\prime_\alpha p_\beta\left[\mathrm{tr}\left[\gamma^\alpha\gamma^\mu\gamma^\beta\gamma^\nu\right] + \mathrm{tr}\left[\gamma^\alpha\gamma^\mu\gamma^\beta\gamma^\nu\gamma^5\right]\right] \\
+    =& \half{1}p^\prime_\alpha p_\beta\left[4(g^{\alpha\mu}g^{\beta\nu}-g^{\alpha\beta}g^{\mu\nu}+g^{\alpha\nu}g^{\mu\beta})-4i\epsilon^{\alpha\mu\beta\nu}\right] \\
+    =& 2p^\prime_\alpha p_\beta(g^{\alpha\mu}g^{\beta\nu}-g^{\alpha\beta}g^{\mu\nu}+g^{\alpha\nu}g^{\mu\beta}-i\epsilon^{\alpha\mu\beta\nu}) \\
+    =& 2(p^{\prime\mu}p^{\nu}-g^{\mu\nu}p\cdot p^\prime+p^{\prime\nu}p^\mu-i\epsilon^{\alpha\mu\beta\nu}p^\prime_\alpha p_\beta).
+}
+
+
 \subsection{Things unclear to me in Peskin's book}
 
 Here are some confusions in the Peskin' book. 
@@ -618,4 +666,8 @@ Near equation 3.34, how to show that $\bar{\psi}\gamma^\mu\psi$ is a Lorentz vec
 
 Near 3.68, what is the calculation rules of $\gamma^{\mu\nu\rho}=\gamma^{\left[\mu\right.}\gamma^\nu\gamma^{\left.\rho\right]}$ and $\gamma^{\mu\nu\rho\sigma}=\gamma^{\left[\mu\right.}\gamma^\nu\gamma^\rho\gamma^{\left.\sigma\right]}$?
 
-Near 3.113, why a right-handed spinor $v(p)$ corresponds to a positron?
+Near 3.113, why a right-handed spinor $v(\bf{p})$ corresponds to a positron?
+In the paragraph below 5.18, the amplitude is non-zero only when the electron and positron have opposite helicity,
+or equivalently, the electron and positron's spinors have same helicity.
+So mathematically, the expression of spinor $u(\bf{p}),v(\bf{p})$'s helicity is defined by how they are written.
+But for real particles, the helicity are defined as the orientation of observed spin, comparing to the direction of movement(which is already defined by the collision).
