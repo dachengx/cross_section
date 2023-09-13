@@ -1,4 +1,5 @@
 # cross_section
+[![DOI](https://zenodo.org/badge/662117505.svg)](https://zenodo.org/badge/latestdoi/662117505)
 [![Test package](https://github.com/dachengx/cross_section/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/dachengx/cross_section/actions/workflows/pytest.yml)
 [![PyPI version shields.io](https://img.shields.io/pypi/v/xsectron.svg)](https://pypi.python.org/pypi/xsectron/)
 [![CodeFactor](https://www.codefactor.io/repository/github/dachengx/cross_section/badge)](https://www.codefactor.io/repository/github/dachengx/cross_section)
