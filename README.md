@@ -18,9 +18,9 @@ The python codes in this repository are licensed under MIT license.
 
 ## The short-term plan: process to cover
 
-1. neutrino - quark & nucleus
-2. neutrino - lepton
-3. WIMP - nucleus
+1. neutrino - lepton
+2. neutrino - quark & nucleus
+3. WIMP - nucleon
 4. dark photon - electron
 5. axion - electron
 
