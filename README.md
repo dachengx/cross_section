@@ -1,4 +1,10 @@
 # cross_section
+[![Test package](https://github.com/dachengx/cross_section/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/dachengx/cross_section/actions/workflows/pytest.yml)
+[![PyPI version shields.io](https://img.shields.io/pypi/v/xsectron.svg)](https://pypi.python.org/pypi/xsectron/)
+[![CodeFactor](https://www.codefactor.io/repository/github/dachengx/cross_section/badge)](https://www.codefactor.io/repository/github/dachengx/cross_section)
+[![Documentation Status](https://readthedocs.org/projects/xsectron/badge/?version=latest)](https://xsectron.readthedocs.io/en/latest/?badge=latest)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/dachengx/cross_section/main.svg)](https://results.pre-commit.ci/latest/github/dachengx/cross_section/main)
+
 A cross section calculation handbook for students
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
