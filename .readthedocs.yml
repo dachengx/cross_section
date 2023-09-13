@@ -7,7 +7,7 @@ sphinx:
   configuration: docs/source/conf.py
 
 build:
-  image: latest
+  os: latest
   tools:
     python: "3.9"
 
