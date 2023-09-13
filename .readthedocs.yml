@@ -8,9 +8,10 @@ sphinx:
 
 build:
   image: latest
+  tools:
+    python: "3.9"
 
 python:
-  version: "3.9"
   install:
     - requirements: requirements.txt
     - requirements: docs/requirements-docs.txt
