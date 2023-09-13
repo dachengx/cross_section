@@ -716,6 +716,52 @@ Using the kinematical functions above 5.11,
     \underset{m_\mu=0}&{\approx} e^4(1+\cos\theta)^2
 }
 
+\subsubsection{5.87}
+
+Revisit the equation 5.87:
+
+\eqnum{
+    \recip{4}\sum_{\mathrm{spins}}\abs{\mathcal{M}}^2 = 2e^4\left[
+        \frac{p\cdot k^\prime}{p\cdot k} + \frac{p\cdot k}{p\cdot k^\prime} +
+        2m^2(\recip{p\cdot k} - \recip{p\cdot k^\prime}) + m^4(\recip{p\cdot k} - \recip{p\cdot k^\prime})^2
+    \right]
+}
+
+Given 5.81:
+
+\begin{align}
+    \recip{4}\sum_{\mathrm{spins}}\abs{\mathcal{M}}^2 &= 
+    \begin{aligned}[t]
+        \frac{e^4}{4}g_{\mu\rho}g_{\nu\sigma}\cdot\mathrm{tr}
+        \{
+            &(\slashed{p}^\prime+m)
+            \left[
+                \frac{\gamma^\mu\slashed{k}\gamma^\nu+2\gamma^\mu p^\nu}{2p\cdot k}
+                + \frac{\gamma^\nu\slashed{k}^\prime\gamma^\mu-2\gamma^\nu p^\mu}{2p\cdot k^\prime}
+            \right] \notag \\
+            &\cdot(\slashed{p}+m)
+            \left[
+                \frac{\gamma^\sigma\slashed{k}\gamma^\rho+2\gamma^\rho p^\sigma}{2p\cdot k}
+                + \frac{\gamma^\rho\slashed{k}^\prime\gamma^\sigma-2\gamma^\sigma p^\rho}{2p\cdot k^\prime}
+            \right]
+        \} \notag \\
+    \end{aligned} \\
+    &\equiv \frac{e^4}{4}
+    \left[
+        \frac{\boldsymbol{\mathrm{I}}}{(2p\cdot k)^2} + \frac{\boldsymbol{\mathrm{II}}}{(2p\cdot k)(2p\cdot k^\prime)}
+        + \frac{\boldsymbol{\mathrm{II}}}{(2p\cdot k^\prime)(2p\cdot k)} + \frac{\boldsymbol{\mathrm{IV}}}{(2p\cdot k^\prime)^2}
+    \right],
+\end{align}
+
+where
+
+\eqnum{
+    \boldsymbol{\mathrm{I}} = \mathrm{tr}
+    \left[
+        (\slashed{p}^\prime+m)(\gamma^\mu\slashed{k}\gamma^\nu+2\gamma^\mu p^\nu)(\slashed{p}+m)(\gamma^\sigma\slashed{k}\gamma^\rho+2\gamma^\rho p^\sigma)
+    \right]
+}
+
 \subsection{Things unclear to the author in Peskin's book}
 
 Here are some confusions in the Peskin' book. 
