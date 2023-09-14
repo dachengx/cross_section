@@ -23,7 +23,7 @@ The python codes in this repository are licensed under MIT license.
 6. Focus on simplified theory
 7. Python codes provided
 
-## The short-term plan: process to cover
+## The short-term plan: processes to cover
 
 1. neutrino - lepton
 2. neutrino - quark & nucleus
@@ -37,6 +37,12 @@ inside `note` folder, run
 
 ```
 latexmk -C && latexmk --lualatex main.tex --shell-escape
+```
+
+## How to install the package
+
+```
+pip install xsectron
 ```
 
 ## Credit of template usage
