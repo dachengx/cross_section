@@ -307,3 +307,5 @@ __pycache__
 build
 docs/build
 docs/source/reference/release_notes.rst
+*.svg
+*.png

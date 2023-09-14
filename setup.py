@@ -31,6 +31,11 @@ setuptools.setup(
     install_requires=requires,
     python_requires=">=3.9",
     packages=setuptools.find_packages(),
+    package_data={
+        "xsectron": [
+            "data/*",
+        ],
+    },
     url="https://github.com/dachengx/cross_section",
     classifiers=[
         "Development Status :: 4 - Beta",

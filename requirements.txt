@@ -1,2 +1,4 @@
+mendeleev
 numpy
+hepunits
 scipy
