@@ -748,18 +748,177 @@ Given 5.81:
     \end{aligned} \\
     &\equiv \frac{e^4}{4}
     \left[
-        \frac{\boldsymbol{\mathrm{I}}}{(2p\cdot k)^2} + \frac{\boldsymbol{\mathrm{II}}}{(2p\cdot k)(2p\cdot k^\prime)}
-        + \frac{\boldsymbol{\mathrm{II}}}{(2p\cdot k^\prime)(2p\cdot k)} + \frac{\boldsymbol{\mathrm{IV}}}{(2p\cdot k^\prime)^2}
+        \frac{\mathbf{I}}{(2p\cdot k)^2} + \frac{\mathbf{II}}{(2p\cdot k)(2p\cdot k^\prime)}
+        + \frac{\mathbf{II}}{(2p\cdot k^\prime)(2p\cdot k)} + \frac{\mathbf{IV}}{(2p\cdot k^\prime)^2}
     \right],
 \end{align}
 
 where
 
 \eqnum{
-    \boldsymbol{\mathrm{I}} = \mathrm{tr}
+    \mathbf{I} =& \mathrm{tr}
     \left[
-        (\slashed{p}^\prime+m)(\gamma^\mu\slashed{k}\gamma^\nu+2\gamma^\mu p^\nu)(\slashed{p}+m)(\gamma^\sigma\slashed{k}\gamma^\rho+2\gamma^\rho p^\sigma)
-    \right]
+        (\slashed{p}^\prime+m)(\gamma^\mu\slashed{k}\gamma^\nu+2\gamma^\mu p^\nu)
+        (\slashed{p}+m)(\gamma_\nu\slashed{k}\gamma_\mu+2\gamma_\mu p_\nu)
+    \right] \\
+    \mathbf{II} =& \mathrm{tr}
+    \left[
+        (\slashed{p}^\prime+m)(\gamma^\mu\slashed{k}\gamma^\nu+2\gamma^\mu p^\nu)
+        (\slashed{p}+m)(\gamma_\mu\slashed{k}^\prime\gamma_\nu-2\gamma_\nu p_\mu)
+    \right] \\
+    \mathbf{III} =& \mathrm{tr}
+    \left[
+        (\slashed{p}^\prime+m)(\gamma^\nu\slashed{k}^\prime\gamma^\mu-2\gamma^\nu p^\mu)
+        (\slashed{p}+m)(\gamma_\nu\slashed{k}\gamma_\mu+2\gamma_\mu p_\nu)
+    \right] \\
+    \mathbf{IV} =& \mathrm{tr}
+    \left[
+        (\slashed{p}^\prime+m)(\gamma^\nu\slashed{k}^\prime\gamma^\mu-2\gamma^\nu p^\mu)
+        (\slashed{p}+m)(\gamma_\mu\slashed{k}^\prime\gamma_\nu-2\gamma_\nu p_\mu)
+    \right].
+}
+
+We find that $\mathbf{IV}(k^\prime = -k) = \mathbf{I}(k)$,
+and $\mathbf{II}=\mathbf{III}$.
+
+For $\mathbf{I}$,
+the terms that have odd number of $\gamma$(not including $\gamma^5$, see Chapter 8 Appendix of Weinberg's book for proof and reasons) is zero,
+i.e. $\mathrm{tr}(\gamma^{\mu_1}\gamma^{\mu_2}\cdots\gamma^{\mu_(2N+1)})=0$(5.5, and 8.A.8 in Weinberg's book).
+
+\eqnum{
+    \mathbf{I}
+    =& \mathrm{tr}
+    \left[
+        (\slashed{p}^\prime+m)(\gamma^\mu\slashed{k}\gamma^\nu+2\gamma^\mu p^\nu)
+        (\slashed{p}+m)(\gamma_\nu\slashed{k}\gamma_\mu+2\gamma_\mu p_\nu)
+    \right] \\
+    =& \mathrm{tr}\left[\slashed{p}^\prime \gamma^\mu\slashed{k}\gamma^\nu \slashed{p} \gamma_\nu\slashed{k}\gamma_\mu\right]
+    + \mathrm{tr}\left[2\slashed{p}^\prime \gamma^\mu\slashed{k}\gamma^\nu \slashed{p} \gamma_\mu p_\nu\right] \\
+    &+ \mathrm{tr}\left[2\slashed{p}^\prime \gamma^\mu p^\nu \slashed{p} \gamma_\nu\slashed{k}\gamma_\mu\right]
+    + \mathrm{tr}\left[4\slashed{p}^\prime \gamma^\mu p^\nu \slashed{p} \gamma_\mu p_\nu\right] \\
+    &+ \mathrm{tr}\left[m \gamma^\mu\slashed{k}\gamma^\nu m \gamma_\nu\slashed{k}\gamma_\mu\right]
+    + \mathrm{tr}\left[2m \gamma^\mu\slashed{k}\gamma^\nu m \gamma_\mu p_\nu\right] \\
+    &+ \mathrm{tr}\left[2m \gamma^\mu p^\nu m \gamma_\nu\slashed{k}\gamma_\mu\right]
+    + \mathrm{tr}\left[4m \gamma^\mu p^\nu m \gamma_\mu p_\nu\right]
+}
+
+Using 5.5:
+
+\eqnum{
+    \mathrm{tr}(\gamma^\mu\gamma^\nu) =& 4g^{\mu\nu} \\
+    \mathrm{tr}(\gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma)
+    =& 4(g^{\mu\nu}g^{\rho\sigma} - g^{\mu\rho}g^{\nu\sigma} + g^{\mu\sigma}g^{\nu\rho}) \\
+    \gamma^\mu\gamma^\nu\gamma^\rho\gamma^\sigma\gamma_mu =& -2\gamma^\sigma\gamma^\rho\gamma^\nu
+}
+
+5.9:
+
+\eqnum{
+    \gamma^\mu\gamma^\nu\gamma_\mu = -2\gamma^\nu
+}
+
+and
+
+\eqnum{
+    \slashed{p} \slashed{k} &= p_\mu \gamma^\mu \slashed{k} \\
+    &= p_\mu (2k^\mu - \slashed{k}\gamma^\mu) \\
+    &= 2p\cdot k - \slashed{k}\slashed{p}
+},
+
+put attention to the order $\slashed{k}\slashed{p}$ here, because $p_\mu$ is commutable with $\gamma^\mu$.
+
+Expand the terms:
+
+\eqnum{
+    &\mathrm{tr}\left[\slashed{p}^\prime \gamma^\mu\slashed{k}\gamma^\nu \slashed{p} \gamma_\nu\slashed{k}\gamma_\mu\right] \\
+    =& \mathrm{tr}\left[\slashed{p}^\prime \gamma^\mu\slashed{k}(\gamma^\nu \slashed{p} \gamma_\nu)\slashed{k}\gamma_\mu\right] \\
+    =& \mathrm{tr}\left[\slashed{p}^\prime \gamma^\mu\slashed{k}(-2 \slashed{p})\slashed{k}\gamma_\mu\right] \\
+    =& -2\mathrm{tr}\left[\slashed{p}^\prime (\gamma^\mu\slashed{k}\slashed{p}\slashed{k}\gamma_\mu)\right] \\
+    =& -2\mathrm{tr}\left[\slashed{p}^\prime (-2\gamma^\sigma\gamma^\rho\gamma^\nu k_\sigma p_\rho k_\nu)\right] \\
+    =& 4\mathrm{tr}\left[\slashed{p}^\prime \slashed{k} \slashed{p} \slashed{k}\right] \\
+    =& 4\mathrm{tr}\left[\slashed{p}^\prime \slashed{k} (2p\cdot k - \slashed{k}\slashed{p})\right] \\
+    =& 8p\cdot k\cdot \mathrm{tr}\left[\slashed{p}^\prime \slashed{k}\right] - 4\mathrm{tr}\left[\slashed{p}^\prime \slashed{k}\slashed{k}\slashed{p}\right] \\
+    =& 8p\cdot k\cdot \mathrm{tr}\left[\gamma^\mu\gamma^\nu\right]p_\mu^\prime k_\nu - 4\mathrm{tr}(\gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma)p_\mu^\prime k_\nu k_\rho p_\sigma \\
+    =& 8p\cdot k \cdot 4g^{\mu\nu}p_\mu^\prime k_\nu - 4(g^{\mu\nu}g^{\rho\sigma} - g^{\mu\rho}g^{\nu\sigma} + g^{\mu\sigma}g^{\nu\rho})p_\mu^\prime k_\nu k_\rho p_\sigma \\
+    =& 32(p\cdot k)(p^\prime\cdot k) - 4\left[(p^\prime\cdot k)(p\cdot k)-(p^\prime\cdot k)(p\cdot k)+(p^\prime\cdot p)(k\cdot k)\right] \\
+    =& 32(p\cdot k)(p^\prime\cdot k),
+}
+
+\eqnum{
+    &\mathrm{tr}\left[2\slashed{p}^\prime \gamma^\mu\slashed{k}\gamma^\nu \slashed{p} \gamma_\mu p_\nu\right] \\
+    =& \mathrm{tr}\left[2\slashed{p}^\prime \gamma^\mu(\slashed{k}\gamma_\nu \slashed{p}) \gamma_\mu p^\nu\right] \\
+    =& \mathrm{tr}\left[2\slashed{p}^\prime (-2\gamma^\sigma\gamma^\nu\gamma^\rho k_\rho p_\sigma) p^\nu\right] \\
+    =& -4\mathrm{tr}\left[\slashed{p}^\prime \gamma^\sigma p_\sigma \gamma^\nu p^\nu \gamma^\rho k_\rho\right] \\
+    =& -4\mathrm{tr}\left[\slashed{p}^\prime \slashed{p} \slashed{p} \slashed{k}\right] \\
+    =& -4\mathrm{tr}\left[\slashed{p}^\prime p\cdot p \slashed{k}\right] \\
+    =& -4m^2\mathrm{tr}\left[\slashed{p}^\prime \slashed{k}\right] \\
+    =& -16m^2(p^\prime\cdot k),
+}
+
+\eqnum{
+    &\mathrm{tr}\left[2\slashed{p}^\prime \gamma^\mu p^\nu \slashed{p} \gamma_\nu\slashed{k}\gamma_\mu\right] \\
+    =& \mathrm{tr}\left[2\slashed{p}^\prime \gamma^\mu\slashed{k}\gamma^\nu \slashed{p} \gamma_\mu p_\nu\right] \\
+    =& -16m^2(p^\prime\cdot k),
+}
+
+\eqnum{
+    &\mathrm{tr}\left[4\slashed{p}^\prime \gamma^\mu p^\nu \slashed{p} \gamma_\mu p_\nu\right] \\
+    =& \mathrm{tr}\left[4\slashed{p}^\prime \gamma^\mu \slashed{p} \gamma_\mu p^\nu p_\nu\right] \\
+    =& 4m^2\mathrm{tr}\left[\slashed{p}^\prime \gamma^\mu \slashed{p} \gamma_\mu \right] \\
+    =& 4m^2\mathrm{tr}\left[\slashed{p}^\prime (-2\slashed{p}) \right] \\
+    =& -8m^2\mathrm{tr}\left[\slashed{p}^\prime \slashed{p}\right] \\
+    =& -32m^2(p^\prime\cdot p),
+}
+
+\eqnum{
+    &\mathrm{tr}\left[m \gamma^\mu\slashed{k}\gamma^\nu m \gamma_\nu\slashed{k}\gamma_\mu\right] \\
+    =& m^2\mathrm{tr}\left[\gamma^\mu\slashed{k}(\gamma^\nu \gamma_\nu)\slashed{k}\gamma_\mu\right] \\
+    =& 4m^2\mathrm{tr}\left[\gamma^\mu(\slashed{k}\slashed{k})\gamma_\mu\right] \\
+    =& 4m^2 k^2\mathrm{tr}\left[\gamma^\mu\gamma_\mu\right] \\
+    =& 0,
+}
+
+\eqnum{
+    &\mathrm{tr}\left[2m \gamma^\mu\slashed{k}\gamma^\nu m \gamma_\mu p_\nu\right] \\
+    =& 2m^2\mathrm{tr}\left[(\gamma^\mu\slashed{k}\gamma^\nu \gamma_\mu) p_\nu\right] \\
+    =& 2m^2\mathrm{tr}\left[4g^{\rho\nu}k_\nu p_\nu\right] \\
+    =& 32m^2(p\cdot k),
+}
+
+\eqnum{
+    &\mathrm{tr}\left[2m \gamma^\mu p^\nu m \gamma_\nu\slashed{k}\gamma_\mu\right] \\
+    =& \mathrm{tr}\left[2m \gamma^\mu\slashed{k}\gamma^\nu m \gamma_\mu p_\nu\right] \\
+    =& 32m^2(p\cdot k),
+}
+
+\eqnum{
+    &\mathrm{tr}\left[4m \gamma^\mu p^\nu m \gamma_\mu p_\nu\right] \\
+    =& 4m^2\mathrm{tr}\left[\gamma^\mu p^\nu \gamma_\mu p_\nu\right] \\
+    =& 4m^4\mathrm{tr}\left[\gamma^\mu \gamma_\mu\right] \\
+    =& 4m^4\mathrm{tr}\left[4\times\mathbf{I}\right] \\
+    =& 64m^4
+}
+
+So that
+
+\eqnum{
+    \mathbf{I} = 16(4m^4-2m^2p\cdot p^\prime + 4m^2p\cdot k - 2m^2p^\prime\cdot k + 2(p\cdot k)(p^\prime\cdot k))
+}
+
+Using Mandelstam variables in 5.83:
+
+\eqnum{
+    s &= (p+k)^2 = 2p\cdot k + m^2 = 2p^\prime\cdot k^\prime + m^2 \\
+    t &= (p^\prime - p)^2 = -2p\cdot p^\prime + 2m^2 = -2k\cdot k^\prime \\
+    u &= (k^\prime - p)^2 = -2k^\prime\cdot p + m^2 = -2k\cdot p^\prime + m^2
+}
+
+\eqnum{
+    \mathbf{I} &= 16(4m^4-2m^2(m^2-\half{t}) + 4m^2\half{1}(s-m^2) - 2m^2\half{1}(m^2-u) + \half{1}(s-m^2)(u-m^2)) \\
+    &= 16\left[m^2(4m^2 - 2m^2 + t + 2s - 2m^2 - m^2 + u) + \half{1}(s-m^2)(u-m^2)\right] \\
+    &= 16\left[m^2(t + 2s + u - m^2) + \half{1}(s-m^2)(u-m^2)\right] \\
+    &= 16\left[m^2(s + m^2) + \half{1}(s-m^2)(u-m^2)\right] \\
+    &= 16\left[2m^4 + m^2(s-m^2) + \half{1}(s-m^2)(u-m^2)\right]
 }
 
 \subsection{Things unclear to the author in Peskin's book}
