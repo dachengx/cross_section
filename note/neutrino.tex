@@ -92,6 +92,15 @@ when momentum of bosons is sufficiently low, the propagator is $\frac{ig_{\mu\nu
 
 \subsubsection{Neutrino-electron elastic scattering}
 
+Neutrino-electron elastic scattering, commonly known as ES,
+is the important neutral current events in several neutrino detection experiments,
+such as Super-Kamiokande\cite{collaboration_solar_2001} and SNO\cite{sno_collaboration_direct_2002}.
+
+The cross section is still related to the flavor of neutrinos.
+$(\nu_e,e^-)$ has a 6.5 higher cross section than $(\nu_\mu,e^-)$ and $(\nu_\tau,e^-)$.
+
+ES provides one of the key result of neutrino flux in the solar neutrino problem.
+
 \eqnum{
     \nu_e + e^- \rightarrow \nu_e + e^-
 }
@@ -129,6 +138,7 @@ when momentum of bosons is sufficiently low, the propagator is $\frac{ig_{\mu\nu
 The amplitude:
 
 \eqnum{
+    \label{eq:amp_ES}
     i\mathcal{M} =& -i\frac{g_Z^2}{4m_Z^2}u^s(p)\gamma^\mu(\recip{2}-\recip{2}\gamma^5)\bar{u}^{s^\prime}(p^\prime)
     \bar{u}^r(k)\gamma_\nu(c_V-c_A\gamma^5)u^{r^\prime}(k^\prime)
 }
@@ -236,26 +246,147 @@ So:
     & +4m m^\prime (c_V^2-c_A^2) g^{\mu\nu} \\
     =& 4(c_V^2+c_A^2)(p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu} - p\cdot p^\prime g^{\mu\nu})
     + 4m m^\prime (c_V^2-c_A^2) g^{\mu\nu} \\
-    & -8i c_V c_A \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
+    & +8i c_V c_A \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
 }
 
 Plugin the lemma back to \eqref{eq:M_ES_1}:
 
 \eqnum{
     &\langle\abs{M}^2\rangle \\
-    =& (
+    =& \recip{2^7}(\frac{g_Z}{m_Z})^4(
         8(p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu})
-        -8i \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
+        +8i \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
     ) \\
-    &\cdot (
+    &(
         4(c_V^2+c_A^2)(k_\mu k^\prime_\nu + k_\nu k^\prime_\mu - m_e^2 g_{\mu\nu})
         + 4m_e^2 (c_V^2-c_A^2) g_{\mu\nu} \\
-        & -8i c_V c_A \epsilon_{\mu\nu\alpha\beta}k^\alpha k^{\prime\beta}
+        & +8i c_V c_A \epsilon_{\mu\nu\alpha\beta}k^\alpha k^{\prime\beta}
     ) \\
-    & ...
+    =& ...
 }
 
+\todo[inline]{Complete calculation of $(\nu_e,e^-)$}
+
 \subsubsection{Coherent elastic neutrino-nucleus scattering}
+
+Coherent elastic neutrino-nucleus scattering, commonly known as CE$\nu$NS,
+is an important irreducible background in the drak matter direct detection experiments,
+such as XENON1T\cite{aprile_search_2021} and PandaX-4T\cite{ma_search_2023}.
+The process has already been observed by COHERENT\cite{akimov_observation_2017} at the Spallation Neutron Source (SNS) at Oak Ridge National Laboratory.
+
+To derive the cross section of such interaction,
+we first apply some conventional approximation on the vertices, then dive into the stringent tree-level derivation.
+
+\eqnum{
+    & \begin{tikzpicture}[
+        arrowlabel/.style={
+            /tikzfeynman/momentum/.cd,
+            arrow shorten=#1,
+            arrow distance=0.6,
+          },
+          arrowlabel/.default=0.4
+        ]
+        \begin{feynman}
+            \vertex(p1) at (0, 0);
+            \vertex(p2) at (0, 1.5);
+            \vertex(i1) at (-1.5, -1.5);
+            \vertex(f1) at (1.5, -1.5);
+            \vertex(i2) at (-1.5, 3);
+            \vertex(f2) at (1.5, 3);
+            \diagram*{
+                (i1) --[anti fermion, edge label=$\bar{\nu_e}$, momentum'={[arrowlabel]$p$}] (p1),
+                (p1) --[anti fermion, edge label=$\bar{\nu_e}$, momentum'={[arrowlabel]$p^\prime$}] (f1),
+                (p1) --[boson, edge label=$Z$, momentum'={[arrowlabel]$q$}] (p2),
+                (i2) --[fermion, edge label=$N$, momentum'={[arrowlabel]$k$}] (p2),
+                (p2) --[fermion, edge label=$N$, momentum'={[arrowlabel]$k^\prime$}] (f2),
+            };
+        \end{feynman}
+    \end{tikzpicture} \\
+    =& \bar{v}^s(p)\frac{-ig_Z}{2}\gamma^\mu(\recip{2}-\recip{2}\gamma^5)v^{s^\prime}(p^\prime)
+    \frac{ig_{\mu\nu}}{m_Z^2}
+    \bar{u}^r(k)\frac{-ig_Z}{2}\gamma^\nu(c_V-c_A\gamma^5)u^{r^\prime}(k^\prime) \\
+    =& \bar{v}^s(p)\frac{-ig_Z}{2}\gamma^\mu(\recip{2}-\recip{2}\gamma^5)v^{s^\prime}(p^\prime)
+    \frac{ig_{\mu\nu}}{m_Z^2}
+    \bar{u}^r(k)\frac{-ig_Z}{2}\gamma^\nu(I_3-2Q\sin^2{\theta_W}-I_3\gamma^5)u^{r^\prime}(k^\prime)
+}
+
+$I_3$ is the weak isospin, $Q$ is the charge. For neutron, the vertex is:
+
+\eqnum{
+    -i\frac{g_Z}{2}\gamma^\mu\left(-\recip{2}+\half{\gamma^5}\right),
+}
+
+for proton, the vertex is:
+
+\eqnum{
+    -i\frac{g_Z}{2}\gamma^\mu\left(\recip{2}-2\sin^2{\theta_W}-\half{\gamma^5}\right),
+}
+
+for neutrino, the vertex is:
+
+\eqnum{
+    -i\frac{g_Z}{2}\gamma^\mu\left(\recip{2}-\half{\gamma^5}\right).
+}
+
+$\gamma^\mu\gamma^5$ term gives the axial-vector form factor, i.e. spin-dependent form factor,
+which is much smaller than the $\gamma^\mu$ term corresponding to spin-independent form
+factor. We ignore the $\gamma^\mu\gamma^5$ terms for now.
+\todo[inline]{Why $\gamma^\mu\gamma^5$ form factor is small?}Define the electro-weak charge as:
+
+\eqnum{
+    Q^{ew} = 2I_3-4Q\sin^2{\theta_W},
+}
+
+the vertex is just $-ig_Z Q^{ew}/4$. Summary all $Q^{ew}$ in the following table:
+
+\begin{table}[htbp]
+    \centering
+    % \caption{}
+    \begin{tabular}{|c c c c|}
+        \hline
+         & $Q$ & $I_3$ & $Q^{ew}$ \\
+        \hline
+        neutrino & $0$ & $+\recip{2}$ & $+1$ \\
+        \hline
+        neutron & $0$ & $-\recip{2}$ & $-1$ \\
+        \hline
+        proton & $+1$ & $+\recip{2}$ & $1-4\sin^2{\theta_W}$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Rewrite the amplitude, replace $c_V-c_A\gamma^5$ by $Q^{ew}/2$ in \eqref{eq:amp_ES} and \eqref{eq:M_ES_1}:
+
+\eqnum{
+    i\mathcal{M} =& -i\frac{g_Z^2}{4m_Z^2}\bar{v}^s(p)\gamma^\mu(\recip{2}-\recip{2}\gamma^5)v^{s^\prime}(p^\prime)
+    \bar{u}^r(k)\gamma_\nu\half{Q^{ew}}u^{r^\prime}(k^\prime)
+}
+
+\eqnum{
+    \label{eq:M_CEvNS_1}
+    &\langle\abs{M}^2\rangle \\
+    =& \recip{2^9}(Q^{ew})^2(\frac{g_Z}{m_Z})^4
+    \mathrm{tr}\left[(\slashed{p}+m_\nu)\gamma^\mu(1-\gamma^5)(\slashed{p}^\prime+m_\nu)\gamma^\nu(1-\gamma^5)\right] \\
+    &\cdot \mathrm{tr}\left[(\slashed{k}+m_N)\gamma_\mu(\slashed{k}^\prime+m_N)\gamma_\nu\right]
+}
+
+Plugin the lemma back to \eqref{eq:M_CEvNS_1}:
+
+\eqnum{
+    &\langle\abs{M}^2\rangle \\
+    =& \recip{2^9}(Q^{ew})^2(\frac{g_Z}{m_Z})^4(
+        8(p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu})
+        +8i \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
+    ) \\
+    &\cdot (
+        4(k_\mu k^\prime_\nu + k_\nu k^\prime_\mu - m_N^2 g_{\mu\nu}) + 4m_N^2 g_{\mu\nu}
+    ) \\
+    \approx& \recip{2^4}(Q^{ew})^2(\frac{g_Z}{m_Z})^4(
+        (p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu})
+    ) \cdot (
+        (k_\mu k^\prime_\nu + k_\nu k^\prime_\mu)
+    )
+}
 
 \subsubsection{Inverse beta decay}
 
