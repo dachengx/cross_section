@@ -409,12 +409,12 @@ is:
 \eqnum{
     & \begin{tikzpicture}
         \begin{feynman}
-            \node[dot, label=above:\(z\)](z) at (0, 0);
-            \node[dot, label=left:\(x_\mathcal{A}\)](i1) at (-1, -1);
-            \node[dot, label=right:\(x_\mathcal{B}\)](i2) at (1, -1);
-            \node[dot, label=left:\(x_1\)](f1) at (-1, 1);
-            \node[dot, label=right:\(x_2\)](f2) at (1, 1);
-            \node[dot, label=left:\(w\)](w) at (0.5, -0.5);
+            \node[dot, label=above:$z$](z) at (0, 0);
+            \node[dot, label=left:$x_\mathcal{A}$](i1) at (-1, -1);
+            \node[dot, label=right:$x_\mathcal{B}$](i2) at (1, -1);
+            \node[dot, label=left:$x_1$](f1) at (-1, 1);
+            \node[dot, label=right:$x_2$](f2) at (1, 1);
+            \node[dot, label=left:$w$](w) at (0.5, -0.5);
             \vertex(w0) at (1, 0);
             \diagram*{
                 (i1) -- (z),
@@ -472,7 +472,7 @@ is:
 \eqnum{
     & \begin{tikzpicture}
         \begin{feynman}
-            \vertex (p) at (0, 0);
+            \vertex(p) at (0, 0);
             \vertex(i1) at (-1, -1);
             \vertex(i2) at (1, -1);
             \vertex(f1) at (-1, 1);
@@ -480,12 +480,12 @@ is:
             \vertex(k) at (0.5, -0.5);
             \vertex(k0) at (1, 0);
             \diagram*{
-                (i1) --[fermion, edge label=\(p_\mathcal{A}\)] (p),
-                (i2) --[fermion, edge label=\(p_\mathcal{B}\)] (k),
-                (k) --[fermion, edge label=\(p^\prime\)] (p),
-                (p) --[fermion, edge label=\(p_1\)] (f1),
-                (p) --[fermion, edge label=\(p_2\)] (f2),
-                (k) --[fermion, out=0, in=-45, edge label'=\(k\)] (k0),
+                (i1) --[fermion, edge label=$p_\mathcal{A}$] (p),
+                (i2) --[fermion, edge label=$p_\mathcal{B}$] (k),
+                (k) --[fermion, edge label=$p^\prime$] (p),
+                (p) --[fermion, edge label=$p_1$] (f1),
+                (p) --[fermion, edge label=$p_2$] (f2),
+                (k) --[fermion, out=0, in=-45, edge label'=$k$] (k0),
                 (k0) --[out=135, in=90] (k),
             };
         \end{feynman}

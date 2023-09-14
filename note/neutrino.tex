@@ -1,6 +1,170 @@
 \subsection{Neutrino's interaction} \label{sec:neutrino}
 
+Vertices and propagators in Glashow–Weinberg–Salam Theory:
+
+Vertices:
+
+\eqnum{
+    \begin{tikzpicture}
+        \begin{feynman}
+            \vertex(p) at (0, 0);
+            \vertex(i) at (-0.886, -0.5);
+            \vertex(f) at (0.886, -0.5);
+            \vertex(o) at (0, 1);
+            \diagram*{
+                (i) --[fermion, edge label=$l^-$, near start] (p),
+                (p) --[fermion, edge label=$\nu_l$, near end] (f),
+                (p) --[boson, edge label=$W^-$, near end] (o),
+            };
+        \end{feynman}
+    \end{tikzpicture},\quad
+    \frac{-ig_W}{2\sqrt{2}}\gamma^\mu(1-\gamma^5)
+}
+
+\eqnum{
+    \begin{tikzpicture}
+        \begin{feynman}
+            \vertex(p) at (0, 0);
+            \vertex(i) at (-0.886, -0.5);
+            \vertex(f) at (0.886, -0.5);
+            \vertex(o) at (0, 1);
+            \diagram*{
+                (i) --[fermion, edge label=$q_i^{-\recip{3}}$, near start] (p),
+                (p) --[fermion, edge label=$q_j^{+\frac{2}{3}}$, near end] (f),
+                (p) --[boson, edge label=$W^-$, near end] (o),
+            };
+        \end{feynman}
+    \end{tikzpicture},\quad
+    \frac{-ig_W}{2\sqrt{2}}\gamma^\mu(1-\gamma^5)V_{ij}
+}
+
+\eqnum{
+    \begin{tikzpicture}
+        \begin{feynman}
+            \vertex(p) at (0, 0);
+            \vertex(i) at (-0.886, -0.5);
+            \vertex(f) at (0.886, -0.5);
+            \vertex(o) at (0, 1);
+            \diagram*{
+                (i) --[fermion, edge label=$f$, near start] (p),
+                (p) --[fermion, edge label=$f$, near end] (f),
+                (p) --[boson, edge label=$Z$, near end] (o),
+            };
+        \end{feynman}
+    \end{tikzpicture},\quad
+    \frac{-ig_Z}{2}\gamma^\mu(c_V^f-c_A^f\gamma^5) = \frac{-ig_Z}{2}\gamma^\mu(I_3-2Q\sin^2{\theta_W}-I_3\gamma^5)
+}
+
+\begin{table}[htbp]
+    \centering
+    % \caption{}
+    \begin{tabular}{|c c c|}
+        \hline
+        $f$ & $c_V$ & $c_A$ \\
+        \hline
+        $\nu_e,\nu_\mu,\nu_\tau$ & $\recip{2}$ & $\recip{2}$ \\
+        \hline
+        $e^-,\mu^-,\tau^-$ & $-\recip{2}+2\sin^2{\theta_W}$ & $-\recip{2}$ \\
+        \hline
+        $u,c,t$ & $\recip{2}-\frac{4}{3}\sin^2{\theta_W}$ & $\recip{2}$ \\
+        \hline
+        $d,s,b$ & $-\recip{2}+\frac{2}{3}\sin^2{\theta_W}$ & $-\recip{2}$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Propagators:
+
+\eqnum{
+    \begin{tikzpicture}
+        \begin{feynman}
+            \vertex(i) at (-1, 0);
+            \vertex(f) at (1, 0);
+            \diagram*{
+                (i) --[boson, edge label=$W^{\pm}\,\mathrm{or}\,Z$] (f),
+            };
+        \end{feynman}
+    \end{tikzpicture},\quad
+    \frac{-i}{q^2-m^2}(g_{\mu\nu}-\frac{q_\mu q_\nu}{m^2})
+}
+
+when momentum of bosons is sufficiently low, the propagator is $\frac{ig_{\mu\nu}}{m^2}$.
+
 \subsubsection{Neutrino-electron elastic scattering}
+
+\eqnum{
+    \nu_e + e^- \rightarrow \nu_e + e^-
+}
+
+\eqnum{
+    & \begin{tikzpicture}[
+        arrowlabel/.style={
+            /tikzfeynman/momentum/.cd,
+            arrow shorten=#1,
+            arrow distance=0.6,
+          },
+          arrowlabel/.default=0.4
+        ]
+        \begin{feynman}
+            \vertex(p1) at (0, 0);
+            \vertex(p2) at (0, 1.5);
+            \vertex(i1) at (-1.5, -1.5);
+            \vertex(f1) at (1.5, -1.5);
+            \vertex(i2) at (-1.5, 3);
+            \vertex(f2) at (1.5, 3);
+            \diagram*{
+                (i1) --[fermion, edge label=$\nu_e$, momentum'={[arrowlabel]$p$}] (p1),
+                (p1) --[fermion, edge label=$\nu_e$, momentum'={[arrowlabel]$p^\prime$}] (f1),
+                (p1) --[boson, edge label=$Z$, momentum'={[arrowlabel]$q$}] (p2),
+                (i2) --[fermion, edge label=$e^-$, momentum'={[arrowlabel]$k$}] (p2),
+                (p2) --[fermion, edge label=$e^-$, momentum'={[arrowlabel]$k^\prime$}] (f2),
+            };
+        \end{feynman}
+    \end{tikzpicture} \\
+    =& u^s(p)\frac{-ig_Z}{2}\gamma^\mu(\recip{2}-\recip{2}\gamma^5)\bar{u}^{s^\prime}(p^\prime)
+    \frac{ig_{\mu\nu}}{m_Z^2}
+    \bar{u}^r(k)\frac{-ig_Z}{2}\gamma^\nu(c_V-c_A\gamma^5)u^{r^\prime}(k^\prime)
+}
+
+The amplitude:
+
+\eqnum{
+    i\mathcal{M} =& -i\frac{g_Z^2}{4m_Z^2}u^s(p)\gamma^\mu(\recip{2}-\recip{2}\gamma^5)\bar{u}^{s^\prime}(p^\prime)
+    \bar{u}^r(k)\gamma_\nu(c_V-c_A\gamma^5)u^{r^\prime}(k^\prime)
+}
+
+Importantly, electrons have two states of spins. But neutrinos, as massless particles, only have one state of spin,
+they are always left-handed and polarized, so the spin sum of all states is:
+
+\eqnum{
+    \langle\abs{M}^2\rangle = \sum_{s}\sum_{s^\prime}\half{1}\sum_{r}\sum_{r^\prime}\abs{M(s,s^\prime\rightarrow r,r^\prime)}^2.
+}
+
+Similar to 5.2 in Peskin's book,
+
+\eqnum{
+    &\langle\abs{M}^2\rangle \\
+    =& \recip{2^7}(\frac{g_Z}{m_Z})^4
+    \left(u^s(p)\gamma^\mu(1-\gamma^5)\bar{u}^{s^\prime}(p^\prime)u^{s^\prime}(p^\prime)(1-\gamma^5)\bar{u}^s(p)\gamma^\nu\right) \\
+    &\cdot\left(\bar{u}^r(k)\gamma_\mu(c_V-c_A\gamma^5)u^{r^\prime}(k^\prime)\bar{u}^{r^\prime}(k^\prime)(c_V-c_A\gamma^5)u^r(k)\gamma_\nu\right) \\
+    =& \recip{2^7}(\frac{g_Z}{m_Z})^4
+    \mathrm{tr}\left[(\slashed{p}-m_\nu)\gamma^\mu(1-\gamma^5)(\slashed{p}^\prime+m_\nu)\gamma^\nu(1-\gamma^5)\right] \\
+    &\cdot \mathrm{tr}\left[(\slashed{k}+m_e)\gamma_\mu(c_V-c_A\gamma^5)(\slashed{k}^\prime+m_e)\gamma_\nu(c_V-c_A\gamma^5)\right]
+}
+
+Proof a lemma, a useful general case for traces in week interaction:
+
+\eqnum{
+    &\mathrm{tr}\left[(\slashed{p}-m)\gamma^\mu(c_V-c_A\gamma^5)(\slashed{p}^\prime+m)\gamma^\mu(c_V-c_A\gamma^5)\right] \\
+    =& \mathrm{tr}\left[\slashed{p}\gamma^\mu c_V\slashed{p}^\prime\gamma^\nu c_V\right]
+    - \mathrm{tr}\left[\slashed{p}\gamma^\mu c_V m \gamma^\nu c_A\gamma^5\right] \\
+    &+ \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right]
+    - \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5 m \gamma^\nu c_V\right] \\
+    &+ \mathrm{tr}\left[m\gamma^\mu c_V \slashed{p}^\prime\gamma^\mu c_A\gamma^5\right]
+    - \mathrm{tr}\left[m\gamma^\mu c_V m \gamma^\mu c_V\right] \\
+    &+ \mathrm{tr}\left[m\gamma^\mu c_A\gamma^5 \slashed{p}^\prime\gamma^\mu c_V\right]
+    - \mathrm{tr}\left[m\gamma^\mu c_A\gamma^5 m \gamma^\mu c_A\gamma^5\right]
+}
 
 \subsubsection{Inverse beta decay}
 
