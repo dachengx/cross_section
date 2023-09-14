@@ -253,19 +253,69 @@ Plugin the lemma back to \eqref{eq:M_ES_1}:
 
 \eqnum{
     &\langle\abs{M}^2\rangle \\
-    =& \recip{2^7}(\frac{g_Z}{m_Z})^4(
-        8(p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu})
-        +8i \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
-    ) \\
-    &(
-        4(c_V^2+c_A^2)(k_\mu k^\prime_\nu + k_\nu k^\prime_\mu - m_e^2 g_{\mu\nu})
-        + 4m_e^2 (c_V^2-c_A^2) g_{\mu\nu} \\
-        & +8i c_V c_A \epsilon_{\mu\nu\alpha\beta}k^\alpha k^{\prime\beta}
-    ) \\
-    =& ...
+    =& \recip{2^7}(\frac{g_Z}{m_Z})^4\left[
+        8(p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu} - (p\cdot p^\prime)g^{\mu\nu})
+        + 8i \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
+    \right] \\
+    & \cdot \left[
+        4(c_V^2+c_A^2)(k_\mu k^\prime_\nu + k_\nu k^\prime_\mu - (k\cdot k^\prime) g_{\mu\nu})
+        + 4 m_e^2 (c_V^2-c_A^2) g_{\mu\nu}
+        + 8i c_V c_A \epsilon_{\mu\nu\alpha\beta} k^\alpha k^{\prime\beta}
+    \right] \\
+    =& \recip{4}(\frac{g_Z}{m_Z})^4\left[
+        (p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu} - (p\cdot p^\prime)g^{\mu\nu})
+        + i \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
+    \right] \\
+    & \cdot \left[
+        (c_V^2+c_A^2)(k_\mu k^\prime_\nu + k_\nu k^\prime_\mu - (k\cdot k^\prime) g_{\mu\nu})
+        +  m_e^2 (c_V^2-c_A^2) g_{\mu\nu}
+        + 2i c_V c_A \epsilon_{\mu\nu\alpha\beta} k^\alpha k^{\prime\beta}
+    \right]
 }
 
-\todo[inline]{Complete calculation of $(\nu_e,e^-)$}
+We have the following tricks:
+
+\eqnum{
+    g_{\mu\nu}\epsilon^{\mu\nu\rho\sigma} &= 0 \\
+    \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma(k_\mu k^\prime_\nu + k_\nu k^\prime_\mu) &= 0 \\
+    \epsilon_{\mu\nu\alpha\beta} k^\alpha k^{\prime\beta}(p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu}) &= 0 \\
+    \epsilon^{\mu\nu\rho\sigma}\epsilon_{\mu\nu\alpha\beta} &=
+    -2(\delta^\rho_{\phantom{x}\alpha}\delta^\sigma_{\phantom{x}\beta}
+    - \delta^\rho_{\phantom{x}\beta}\delta^\sigma_{\phantom{x}\alpha})
+}
+
+So:
+
+\eqnum{
+    &\langle\abs{M}^2\rangle \\
+    =& \recip{4}(\frac{g_Z}{m_Z})^4\left[
+        (p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu} - (p\cdot p^\prime)g^{\mu\nu})
+        + i \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
+    \right] \\
+    & \cdot \left[
+        (c_V^2+c_A^2)(k_\mu k^\prime_\nu + k_\nu k^\prime_\mu - (k\cdot k^\prime) g_{\mu\nu})
+        + m_e^2 (c_V^2-c_A^2) g_{\mu\nu}
+        + 2i c_V c_A \epsilon_{\mu\nu\alpha\beta} k^\alpha k^{\prime\beta}
+    \right] \\
+    =& \recip{4}(\frac{g_Z}{m_Z})^4\left[
+        2(c_V^2+c_A^2)(
+            (p\cdot k)(p^\prime\cdot k^\prime) + (p\cdot k^\prime)(p^\prime\cdot k) - (p\cdot p^\prime)(k\cdot k^\prime) \right. \\
+            &+ (p\cdot k^\prime)(p^\prime\cdot k) + (p\cdot k)(p^\prime\cdot k^\prime) - (p\cdot p^\prime)(k\cdot k^\prime) \\
+            &- (p\cdot p^\prime)(k\cdot k^\prime) - (p\cdot p^\prime)(k\cdot k^\prime) + 4(p\cdot p^\prime)(k\cdot k^\prime)) \\
+        & m_e^2 (c_V^2-c_A^2)(2(p\cdot p^\prime)-4(p\cdot p^\prime)) \\
+        &- \left. 2 c_V c_A\epsilon^{\mu\nu\rho\sigma}\epsilon_{\mu\nu\alpha\beta} p_\rho p^\prime_\sigma k^\alpha k^{\prime\beta}
+    \right] \\
+    =& \recip{2}(\frac{g_Z}{m_Z})^4\left[
+        (c_V^2+c_A^2)((p\cdot k)(p^\prime\cdot k^\prime) + (p\cdot k^\prime)(p^\prime\cdot k)) \right. \\
+        &- m_e^2 (c_V^2-c_A^2)(p\cdot p^\prime) \\
+        &+ \left. 2 c_V c_A (\delta^\rho_{\phantom{x}\alpha}\delta^\sigma_{\phantom{x}\beta}
+        - \delta^\rho_{\phantom{x}\beta}\delta^\sigma_{\phantom{x}\alpha})p_\rho p^\prime_\sigma k^\alpha k^{\prime\beta}
+    \right] \\
+    =& \recip{2}(\frac{g_Z}{m_Z})^4\left[
+        (c_V+c_A)^2(p\cdot k)(p^\prime\cdot k^\prime) + (c_V-c_A)^2(p\cdot k^\prime)(p^\prime\cdot k) \right. \\
+        &- \left. m_e^2 (c_V^2-c_A^2)(p\cdot p^\prime)
+    \right]
+}
 
 \subsubsection{Coherent elastic neutrino-nucleus scattering}
 
