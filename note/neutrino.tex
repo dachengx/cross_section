@@ -143,31 +143,120 @@ they are always left-handed and polarized, so the spin sum of all states is:
 Similar to 5.2 in Peskin's book,
 
 \eqnum{
+    \label{eq:M_ES_1}
     &\langle\abs{M}^2\rangle \\
     =& \recip{2^7}(\frac{g_Z}{m_Z})^4
     \left(u^s(p)\gamma^\mu(1-\gamma^5)\bar{u}^{s^\prime}(p^\prime)u^{s^\prime}(p^\prime)(1-\gamma^5)\bar{u}^s(p)\gamma^\nu\right) \\
     &\cdot\left(\bar{u}^r(k)\gamma_\mu(c_V-c_A\gamma^5)u^{r^\prime}(k^\prime)\bar{u}^{r^\prime}(k^\prime)(c_V-c_A\gamma^5)u^r(k)\gamma_\nu\right) \\
     =& \recip{2^7}(\frac{g_Z}{m_Z})^4
-    \mathrm{tr}\left[(\slashed{p}-m_\nu)\gamma^\mu(1-\gamma^5)(\slashed{p}^\prime+m_\nu)\gamma^\nu(1-\gamma^5)\right] \\
+    \mathrm{tr}\left[(\slashed{p}+m_\nu)\gamma^\mu(1-\gamma^5)(\slashed{p}^\prime+m_\nu)\gamma^\nu(1-\gamma^5)\right] \\
     &\cdot \mathrm{tr}\left[(\slashed{k}+m_e)\gamma_\mu(c_V-c_A\gamma^5)(\slashed{k}^\prime+m_e)\gamma_\nu(c_V-c_A\gamma^5)\right]
 }
 
 Proof a lemma, a useful general case for traces in week interaction:
 
 \eqnum{
-    &\mathrm{tr}\left[(\slashed{p}-m)\gamma^\mu(c_V-c_A\gamma^5)(\slashed{p}^\prime+m)\gamma^\mu(c_V-c_A\gamma^5)\right] \\
+    &\mathrm{tr}\left[(\slashed{p}+m)\gamma^\mu(c_V-c_A\gamma^5)(\slashed{p}^\prime+m^\prime)\gamma^\nu(c_V-c_A\gamma^5)\right] \\
     =& \mathrm{tr}\left[\slashed{p}\gamma^\mu c_V\slashed{p}^\prime\gamma^\nu c_V\right]
-    - \mathrm{tr}\left[\slashed{p}\gamma^\mu c_V m \gamma^\nu c_A\gamma^5\right] \\
-    &+ \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right]
-    - \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5 m \gamma^\nu c_V\right] \\
-    &+ \mathrm{tr}\left[m\gamma^\mu c_V \slashed{p}^\prime\gamma^\mu c_A\gamma^5\right]
-    - \mathrm{tr}\left[m\gamma^\mu c_V m \gamma^\mu c_V\right] \\
-    &+ \mathrm{tr}\left[m\gamma^\mu c_A\gamma^5 \slashed{p}^\prime\gamma^\mu c_V\right]
-    - \mathrm{tr}\left[m\gamma^\mu c_A\gamma^5 m \gamma^\mu c_A\gamma^5\right]
+    - \mathrm{tr}\left[\slashed{p}\gamma^\mu c_V\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right] \\
+    &+ \mathrm{tr}\left[\slashed{p}\gamma^\mu c_V m^\prime \gamma^\nu c_V\right]
+    - \mathrm{tr}\left[\slashed{p}\gamma^\mu c_V m^\prime \gamma^\nu c_A\gamma^5\right] \\
+    &- \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_V\right]
+    + \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right] \\
+    &- \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5 m^\prime \gamma^\nu c_V\right]
+    + \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5 m^\prime \gamma^\nu c_A\gamma^5\right] \\
+    &+ \mathrm{tr}\left[m\gamma^\mu c_V\slashed{p}^\prime\gamma^\nu c_V\right]
+    - \mathrm{tr}\left[m\gamma^\mu c_V\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right] \\
+    &+ \mathrm{tr}\left[m\gamma^\mu c_V m^\prime \gamma^\nu c_V\right]
+    - \mathrm{tr}\left[m\gamma^\mu c_V m^\prime \gamma^\nu c_A\gamma^5\right] \\
+    &- \mathrm{tr}\left[m\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_V\right]
+    + \mathrm{tr}\left[m\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right] \\
+    &- \mathrm{tr}\left[m\gamma^\mu c_A\gamma^5 m^\prime \gamma^\nu c_V\right]
+    + \mathrm{tr}\left[m\gamma^\mu c_A\gamma^5 m^\prime \gamma^\nu c_A\gamma^5\right] \\
+    =& \mathrm{tr}\left[\slashed{p}\gamma^\mu c_V\slashed{p}^\prime\gamma^\nu c_V\right]
+    - \mathrm{tr}\left[\slashed{p}\gamma^\mu c_V\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right] \\
+    &+ 0
+    - 0 \\
+    &- \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_V\right]
+    + \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right] \\
+    &- 0
+    + 0 \\
+    &+ 0
+    - 0 \\
+    &+ \mathrm{tr}\left[m\gamma^\mu c_V m^\prime \gamma^\nu c_V\right]
+    - 0 \\
+    &- 0
+    + 0 \\
+    &- 0
+    + \mathrm{tr}\left[m\gamma^\mu c_A\gamma^5 m^\prime \gamma^\nu c_A\gamma^5\right]
 }
 
-\subsubsection{Inverse beta decay}
+We can wait a sec here to calculate another quantity we will use later, from 5.5 in Peskin's book:
+
+\eqnum{
+    &\mathrm{tr}\left[\slashed{p}\gamma^\mu \slashed{p}^\prime\gamma^\nu \right] \\
+    =& \mathrm{tr}\left[\gamma^\rho \gamma^\mu \gamma^\sigma \gamma^\nu \right]p_\rho p_\sigma^\prime \\
+    =& 4(g^{\rho\mu}g^{\sigma\nu}-g^{\rho\sigma}g^{\mu\nu}+g^{\rho\nu}g^{\mu\sigma})p_\rho p_\sigma^\prime \\
+    =& 4(p^\mu p^{\prime\nu} - p\cdot p^\prime g^{\mu\nu} + p^\nu p^{\prime\mu}).
+}
+
+We should noticed that $\mathrm{tr}\left[\slashed{p}\gamma^\mu c_V\slashed{p}^\prime\gamma^\nu c_V\right]$
+and $\mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right]$ looks similar,
+both with even $\gamma^\mu$ and even $\gamma^5$, actually they are the same except $c_V \rightarrow c_A$.
+Because $\{\gamma^\nu,\gamma^5\}=0$.
+
+The nasty term:
+
+\eqnum{
+    &\mathrm{tr}\left[\slashed{p}\gamma^\mu c_V\slashed{p}^\prime\gamma^\nu c_A\gamma^5\right] \\
+    =& -4i c_V c_A \epsilon^{\rho\mu\sigma\nu}p_\rho p^\prime_\sigma \\
+    =& \mathrm{tr}\left[\slashed{p}\gamma^\mu c_A\gamma^5\slashed{p}^\prime\gamma^\nu c_V\right]
+}
+
+Easier terms:
+
+\eqnum{
+    \mathrm{tr}\left[m\gamma^\mu c_V m^\prime \gamma^\nu c_V\right] = 4m m^\prime c_V^2 g^{\mu\nu}
+}
+
+\eqnum{
+    &\mathrm{tr}\left[m\gamma^\mu c_A\gamma^5 m^\prime \gamma^\nu c_A\gamma^5\right] \\
+    =& -4m m^\prime c_A^2 \mathrm{tr}\left[\gamma^\mu \gamma^\nu \gamma^5 \gamma^5\right] \\
+    =& -4m m^\prime c_A^2 \mathrm{tr}\left[\gamma^\mu \gamma^\nu \right] \\
+    =& -4m m^\prime c_A^2 g^{\mu\nu}
+}
+
+So:
+
+\eqnum{
+    &\mathrm{tr}\left[(\slashed{p}+m)\gamma^\mu(c_V-c_A\gamma^5)(\slashed{p}^\prime+m^\prime)\gamma^\mu(c_V-c_A\gamma^5)\right] \\
+    =& 4c_V^2(p^\mu p^{\prime\nu} - p\cdot p^\prime g^{\mu\nu} + p^\nu p^{\prime\mu})
+    + 4c_A^2(p^\mu p^{\prime\nu} - p\cdot p^\prime g^{\mu\nu} + p^\nu p^{\prime\mu}) \\
+    & +8i c_V c_A \epsilon^{\rho\mu\sigma\nu} \\
+    & +4m m^\prime (c_V^2-c_A^2) g^{\mu\nu} \\
+    =& 4(c_V^2+c_A^2)(p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu} - p\cdot p^\prime g^{\mu\nu})
+    + 4m m^\prime (c_V^2-c_A^2) g^{\mu\nu} \\
+    & -8i c_V c_A \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
+}
+
+Plugin the lemma back to \eqref{eq:M_ES_1}:
+
+\eqnum{
+    &\langle\abs{M}^2\rangle \\
+    =& (
+        8(p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu})
+        -8i \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
+    ) \\
+    &\cdot (
+        4(c_V^2+c_A^2)(k_\mu k^\prime_\nu + k_\nu k^\prime_\mu - m_e^2 g_{\mu\nu})
+        + 4m_e^2 (c_V^2-c_A^2) g_{\mu\nu} \\
+        & -8i c_V c_A \epsilon_{\mu\nu\alpha\beta}k^\alpha k^{\prime\beta}
+    ) \\
+    & ...
+}
 
 \subsubsection{Coherent elastic neutrino-nucleus scattering}
+
+\subsubsection{Inverse beta decay}
 
 \clearpage
