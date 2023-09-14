@@ -287,6 +287,7 @@ We have the following tricks:
 So:
 
 \eqnum{
+    \label{eq:M_ES_2}
     &\langle\abs{M}^2\rangle \\
     =& \recip{4}(\frac{g_Z}{m_Z})^4\left[
         (p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu} - (p\cdot p^\prime)g^{\mu\nu})
@@ -317,15 +318,64 @@ So:
     \right]
 }
 
+In ES experiments, usually the energy of neutrino is large, e.g. the solar neutrinos are $\sim\mathrm{MeV}$ neutrinos.
+So in center-of-mass frame(CM), we can ignore the mass of electron, i.e. $m_e=0$, and set(similar to 5.62 in Peskin's book):
+
+\eqnum{
+    p &= (x, x\hat{z}) \\
+    p^\prime &= (x, \bf{x}) \\
+    k &= (E, -x\hat{z}) \\
+    k^\prime &= (E, -\bf{x}).
+}
+
+So that:
+
+\eqnum{
+    x &= E \\
+    \bf{x}\cdot\hat{z} &= x\cos{\theta} \\
+    (p\cdot k) &= (p^\prime\cdot k^\prime) = x(E+x) \\
+    (p\cdot k^\prime) &= (p^\prime\cdot k) = x(E+x\cos{\theta})
+}
+
+Note that if here we set the mass of electron to be zero,
+then we would not be able to get a differential cross section as function of the recoil energy, because there is no energy exchange.
+
+\eqnum{
+    &\langle\abs{M}^2\rangle \\
+    =& \recip{2}(\frac{g_Z}{m_Z})^4\left[
+    (c_V+c_A)^2(p\cdot k)(p^\prime\cdot k^\prime) + (c_V-c_A)^2(p\cdot k^\prime)(p^\prime\cdot k) \right. \\
+    &- \left. m_e^2 (c_V^2-c_A^2)(p\cdot p^\prime)
+    \right] \\
+    =& 2(\frac{g_Z E}{m_Z})^4\left[(c_V+c_A)^2 + (c_V-c_A)^2(\half{1+\cos{\theta}})^2\right] \\
+    =& 2(\frac{g_Z E}{m_Z})^4\left[(c_V+c_A)^2 + (c_V-c_A)^2\cos^4{\half{\theta}}\right]
+}
+
+From 4.84 in Peskin's book:
+
+\eqnum{
+    &\left(\frac{\ud\sigma}{\ud\Omega}\right)_{\mathrm{CM}} \\
+    =& \frac{\abs{\mathcal{M}}^2}{64\pi^2(E+x)^2} \\
+    =& \recip{128\pi^2}(\frac{g_Z}{m_Z})^4 E^2 \left[(c_V+c_A)^2 + (c_V-c_A)^2\cos^4{\half{\theta}}\right] \\
+    \propto & E^2
+}
+
+and the total cross section is:
+
+\eqnum{
+    &\sigma_{\mathrm{total}} \\
+    =& \recip{24\pi}(\frac{g_Z}{m_Z})^4 E^2 \left[c_V^2 + c_A^2 + c_V c_A\right]
+}
+
 \subsubsection{Coherent elastic neutrino-nucleus scattering}
 
 Coherent elastic neutrino-nucleus scattering, commonly known as CE$\nu$NS,
 is an important irreducible background in the drak matter direct detection experiments,
 such as XENON1T\cite{aprile_search_2021} and PandaX-4T\cite{ma_search_2023}.
-The process has already been observed by COHERENT\cite{akimov_observation_2017} at the Spallation Neutron Source (SNS) at Oak Ridge National Laboratory.
+The process has already been observed by COHERENT\cite{akimov_observation_2017} at the
+Spallation Neutron Source (SNS) at Oak Ridge National Laboratory.
 
 To derive the cross section of such interaction,
-we first apply some conventional approximation on the vertices, then dive into the stringent tree-level derivation.
+we skip the stringent tree-level derivation but borrow the result from last section.
 
 \eqnum{
     & \begin{tikzpicture}[
@@ -378,65 +428,31 @@ for neutrino, the vertex is:
     -i\frac{g_Z}{2}\gamma^\mu\left(\recip{2}-\half{\gamma^5}\right).
 }
 
-$\gamma^\mu\gamma^5$ term gives the axial-vector form factor, i.e. spin-dependent form factor,
-which is much smaller than the $\gamma^\mu$ term corresponding to spin-independent form
-factor. We ignore the $\gamma^\mu\gamma^5$ terms for now.
-\todo[inline]{Why $\gamma^\mu\gamma^5$ form factor is small?}Define the electro-weak charge as:
-
-\eqnum{
-    Q^{ew} = 2I_3-4Q\sin^2{\theta_W},
-}
-
-the vertex is just $-ig_Z Q^{ew}/4$. Summary all $Q^{ew}$ in the following table:
-
-\begin{table}[htbp]
-    \centering
-    % \caption{}
-    \begin{tabular}{|c c c c|}
-        \hline
-         & $Q$ & $I_3$ & $Q^{ew}$ \\
-        \hline
-        neutrino & $0$ & $+\recip{2}$ & $+1$ \\
-        \hline
-        neutron & $0$ & $-\recip{2}$ & $-1$ \\
-        \hline
-        proton & $+1$ & $+\recip{2}$ & $1-4\sin^2{\theta_W}$ \\
-        \hline
-    \end{tabular}
-\end{table}
-
-Rewrite the amplitude, replace $c_V-c_A\gamma^5$ by $Q^{ew}/2$ in \eqref{eq:amp_ES} and \eqref{eq:M_ES_1}:
-
-\eqnum{
-    i\mathcal{M} =& -i\frac{g_Z^2}{4m_Z^2}\bar{v}^s(p)\gamma^\mu(\recip{2}-\recip{2}\gamma^5)v^{s^\prime}(p^\prime)
-    \bar{u}^r(k)\gamma_\nu\half{Q^{ew}}u^{r^\prime}(k^\prime)
-}
-
-\eqnum{
-    \label{eq:M_CEvNS_1}
-    &\langle\abs{M}^2\rangle \\
-    =& \recip{2^9}(Q^{ew})^2(\frac{g_Z}{m_Z})^4
-    \mathrm{tr}\left[(\slashed{p}+m_\nu)\gamma^\mu(1-\gamma^5)(\slashed{p}^\prime+m_\nu)\gamma^\nu(1-\gamma^5)\right] \\
-    &\cdot \mathrm{tr}\left[(\slashed{k}+m_N)\gamma_\mu(\slashed{k}^\prime+m_N)\gamma_\nu\right]
-}
-
-Plugin the lemma back to \eqref{eq:M_CEvNS_1}:
+Even if we use anti-electron neutrino here, the derivation is still similar to the derivation of ES.
+The only deterrence is that we need to take into account all the protons and neutrons inside the nuclei.
+Also we need to introduce a form factor because the nuclei is not a point particle.
+Copy equation from \eqref{eq:M_ES_2}, this is for each nucleon:
 
 \eqnum{
     &\langle\abs{M}^2\rangle \\
-    =& \recip{2^9}(Q^{ew})^2(\frac{g_Z}{m_Z})^4(
-        8(p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu})
-        +8i \epsilon^{\mu\nu\rho\sigma}p_\rho p^\prime_\sigma
-    ) \\
-    &\cdot (
-        4(k_\mu k^\prime_\nu + k_\nu k^\prime_\mu - m_N^2 g_{\mu\nu}) + 4m_N^2 g_{\mu\nu}
-    ) \\
-    \approx& \recip{2^4}(Q^{ew})^2(\frac{g_Z}{m_Z})^4(
-        (p^\mu p^{\prime\nu} + p^\nu p^{\prime\mu})
-    ) \cdot (
-        (k_\mu k^\prime_\nu + k_\nu k^\prime_\mu)
-    )
+    =& \recip{2}(\frac{g_Z}{m_Z})^4\left[
+        (c_V+c_A)^2(p\cdot k)(p^\prime\cdot k^\prime) + (c_V-c_A)^2(p\cdot k^\prime)(p^\prime\cdot k) \right. \\
+        &- \left. m^2 (c_V^2-c_A^2)(p\cdot p^\prime)
+    \right],
 }
+
+where m is the mass of nucleon.
+
+In lab frame, similar to 5.88 in Peskin's book:
+
+\eqnum{
+    p &= (\omega, \omega\hat{z}) \\
+    p^\prime &= (\omega^\prime, \omega^\prime\sin{\theta},0,\omega^\prime\cos{\theta}) \\
+    k &= (m, \bf{0}) \\
+    k^\prime &= (E^\prime, \bf{k^\prime})
+}
+
+\todo[inline]{Finish total and differential CEvNS cross section calculation and compare to literatures.}
 
 \subsubsection{Inverse beta decay}
 
