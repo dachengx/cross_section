@@ -4,15 +4,15 @@
 exclude: svg
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v6.0.0
     hooks:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
     -   id: check-yaml
     -   id: check-added-large-files
 
--   repo: https://github.com/psf/black
-    rev: 23.9.1
+-   repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.5.1
     hooks:
     -   id: black
         args: [--safe, --line-length=100]
@@ -21,24 +21,24 @@ repos:
         language_version: python3.9
 
 -   repo: https://github.com/pycqa/docformatter
-    rev: v1.7.5
+    rev: v1.7.8
     hooks:
     -   id: docformatter
 
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.5.1
+    rev: v2.3.1
     hooks:
     -   id: mypy
         additional_dependencies: [types-PyYAML, types-tqdm]
 
 -   repo: https://github.com/pycqa/doc8
-    rev: v1.1.1
+    rev: v2.0.0
     hooks:
     -   id: doc8
         files: ^docs/.*\.(rst|md)$
 
 -   repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
+    rev: 7.3.0
     hooks:
     -   id: flake8
 
